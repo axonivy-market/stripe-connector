@@ -8,4 +8,6 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v4
+    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v5
+    secrets:
+      mvnArgs: -Dstripe.secretKey="{{secrets.SECRET_KEY}}" -Dstripe.publishableKey="{{secrets.PUBLISHABLE_KEY}}"
