@@ -44,20 +44,21 @@ public class PaymentServiceTest {
     $(By.id("form:resquest-button")).click();
     Selenide.sleep(5000);
     Selenide.switchTo().frame($(By.tagName("iframe")));
-    $(By.id("email")).click();
-    $(By.id("email")).sendKeys("Octopus@gmail.com");
-    $(By.id("cardNumber")).click();
-    $(By.id("cardNumber")).sendKeys("4242424242424242");
-    $(By.id("cardExpiry")).click();
-    $(By.id("cardExpiry")).sendKeys("04/31");
-    $(By.id("cardCvc")).sendKeys("115");
-    $(By.id("billingName")).click();
-    $(By.id("billingName")).sendKeys("test");
+    clickAndInputValue("email", "Octopus@gmail.com");
+    clickAndInputValue("cardNumber", "4242424242424242");
+    clickAndInputValue("cardExpiry", "04/31");
+    clickAndInputValue("cardCvc", "115");
+    clickAndInputValue("billingName", "test");
     $("#billingCountry").selectOption("Vietnam");
     $(By.className("SubmitButton")).click();
     Selenide.sleep(5000);
     Selenide.switchTo().alert().accept();
     $(By.className("PaymentSuccess")).shouldBe(visible);
+  }
+
+  private void clickAndInputValue(String id, String value) {
+    $(By.id(id)).click();
+    $(By.id(id)).sendKeys(value);
   }
 
   @TestTemplate

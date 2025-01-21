@@ -8,6 +8,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<variables.yaml.file>../stripe-connector/config/variables.yaml</variables.yaml.file>
 	</properties>
 

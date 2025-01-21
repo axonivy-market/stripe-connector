@@ -11,7 +11,7 @@ public class StripeUtils {
   public static void setUpConfigForApiTest(AppFixture fixture) {
     String secretKey = System.getProperty("secretKey");
     String publishableKey = System.getProperty("publishableKey");
-    fixture.var("stripe-connector.auth.secretKey", secretKey);
-    fixture.var("stripe-connector.auth.publishableKey", publishableKey);
+    fixture.var("stripe.auth.secretKey", secretKey);
+    fixture.var("stripe.auth.publishableKey", publishableKey);
   }
 }

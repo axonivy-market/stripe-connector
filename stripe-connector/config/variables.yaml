@@ -1,8 +1,10 @@
 # yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
 Variables:
-  stripe-connector:
+  stripe:
     auth:
+      # Secret key in Stripe account
       #[password]
       secretKey: ${decrypt:}
+      # Publishable key in Stripe account
       #[password]
       publishableKey: ${decrypt:}

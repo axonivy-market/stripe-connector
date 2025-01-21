@@ -5,45 +5,5 @@
   "config" : {
     "data" : "com.axonivy.connector.stripe.EmbededCheckoutData"
   },
-  "elements" : [ {
-      "id" : "f0",
-      "type" : "CallSubStart",
-      "name" : "embededCheckoutSessionFrame(String,Number)",
-      "config" : {
-        "signature" : "embededCheckoutSessionFrame",
-        "input" : {
-          "params" : [
-            { "name" : "priceId", "type" : "String", "desc" : "" },
-            { "name" : "quantity", "type" : "Number", "desc" : "" }
-          ],
-          "map" : { }
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 144, "y" : 64 }
-      },
-      "connect" : [
-        { "id" : "f2", "to" : "f3" }
-      ]
-    }, {
-      "id" : "f1",
-      "type" : "CallSubEnd",
-      "visual" : {
-        "at" : { "x" : 568, "y" : 64 },
-        "labelOffset" : { "x" : 13, "y" : 33 }
-      }
-    }, {
-      "id" : "f3",
-      "type" : "DialogCall",
-      "name" : "Embeded component",
-      "config" : {
-        "dialog" : "com.axonivy.connector.stripe.StripeEmbededCheckout:start()"
-      },
-      "visual" : {
-        "at" : { "x" : 352, "y" : 64 }
-      },
-      "connect" : [
-        { "id" : "f4", "to" : "f1", "color" : "default" }
-      ]
-    } ]
+  "elements" : [ ]
 }

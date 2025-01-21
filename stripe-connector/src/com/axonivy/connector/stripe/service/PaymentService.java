@@ -23,7 +23,7 @@ public class PaymentService {
       new ArrayList<>(List.of(CARD));
 
   public PaymentService() {
-    Stripe.apiKey = Ivy.var().get("stripe-connector.auth.secretKey");
+    Stripe.apiKey = Ivy.var().get("stripe.auth.secretKey");
   }
 
   public static PaymentService getInstance() {
