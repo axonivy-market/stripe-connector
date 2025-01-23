@@ -1,0 +1,12 @@
+Dialogs:
+  com:
+    axonivy:
+      connector:
+        stripe:
+          demo:
+            CreateCheckoutSessionDemo:
+              createCheckoutSessionTitle: Create payment checkout session
+              embedStripeCheckoutSession: Embed Stripe checkout Session form
+            PaymendLinkDemo:
+              createPaymentLink: Create Payment Link
+              paymentLinkTitle: Create Payment Link Demo

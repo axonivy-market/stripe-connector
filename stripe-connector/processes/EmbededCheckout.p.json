@@ -1,0 +1,9 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "19467FA0BC2AE299",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.connector.stripe.EmbededCheckoutData"
+  },
+  "elements" : [ ]
+}
