@@ -44,6 +44,25 @@
 				<version>${project.build.plugin.version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			<plugin>
+				<groupId>com.coderplus.maven.plugins</groupId>
+				<artifactId>copy-rename-maven-plugin</artifactId>
+				<version>1.0</version>
+				<executions>
+				<execution>
+					<id>copy-file</id>
+					<phase>generate-sources</phase>
+					<goals>
+						<goal>copy</goal>
+					</goals>
+					<configuration>
+						<sourceFile>${basedir}/../stripe-connector-openapi/target/stripe-openapi-${project.version}.jar</sourceFile>
+						<destinationFile>${basedir}/lib/generated/rest/jaxRsClient_ef99b422-1c59-4c30-8e9c-4f528cb1e117.jar</destinationFile>
+						<overWrite>true</overWrite>
+					</configuration>
+				</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
