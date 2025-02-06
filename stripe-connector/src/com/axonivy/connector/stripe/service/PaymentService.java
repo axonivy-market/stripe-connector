@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.stripe.Stripe;
+import com.stripe.api.client.LineItemsCreateParams;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentLink;
 import com.stripe.model.Price;
@@ -13,6 +14,11 @@ import com.stripe.param.PaymentLinkCreateParams;
 import com.stripe.param.checkout.SessionCreateParams;
 import com.stripe.param.checkout.SessionCreateParams.RedirectOnCompletion;
 import ch.ivyteam.ivy.environment.Ivy;
+import ch.ivyteam.ivy.process.call.SubProcessCall;
+//import ch.ivyteam.ivy.process.call.SubProcessCall;
+//import ch.ivyteam.ivy.process.call.SubProcessCallResult;
+import ch.ivyteam.ivy.process.call.SubProcessCallResult;
+
 import static com.stripe.param.checkout.SessionCreateParams.PaymentMethodType.CARD;
 import static com.stripe.param.checkout.SessionCreateParams.PaymentMethodType.SEPA_DEBIT;
 
@@ -29,6 +35,24 @@ public class PaymentService {
   public static PaymentService getInstance() {
     return instance;
   }
+  
+  public List<LineItemsCreateParams> createParamsForCallable2(String priceId, int quantity) {
+	    LineItemsCreateParams params = new LineItemsCreateParams();
+	    params.setPrice(priceId);
+	    params.setQuantity(quantity);
+	    return List.of(params);
+	  }
+
+	  public void test() {
+	    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("paymentLink")
+	        .withParam("priceId", "price_1QeSG6LaeAomYD3LfEHlcjEr").withParam("quantity", 2).call();
+
+	    if (callResult != null) {
+
+	      Ivy.log().warn(callResult.get("url"));
+	    }
+
+	  }
 
   public PaymentLink createPaymentLink(String priceId, Long quantity) throws StripeException {
     PaymentLinkCreateParams params = PaymentLinkCreateParams.builder()

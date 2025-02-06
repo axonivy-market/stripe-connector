@@ -4,7 +4,7 @@ Variables:
     auth:
       # Secret key in Stripe account
       #[password]
-      secretKey: ${decrypt:}
+      secretKey: ${decrypt:byPU5IUk7eaLq95a4Y3cSFYpXiBpxJ/CTgXUQnB9aWFzawZZ+SMv/7v4Rrt3uN1Y2vkPkr9dZ/dZwNU1iIy0dHfKQuM8G8WsaRjpMbRYtXY5z3vcBZij9EWDmN1ArR5yIVKTQBX2IK6gJDQVjOWVZg==}
       # Publishable key in Stripe account
       #[password]
-      publishableKey: ${decrypt:}
+      publishableKey: ${decrypt:VKEHSjWGwyOgupkvQF6l3cv+bandDZm0jdlnVxvb83wkeK7Mt0nzBOJcQx+kVJxeZjbQ4C54/SmHWGaOn4EyiKc8s0IJ0/bEZorUuzd6yaIpYcq/ZzSjbSncOq8iWHxAW/9V9/m6545vfEPBqxkRUQ==}
