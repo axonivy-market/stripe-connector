@@ -20,6 +20,14 @@
             "out.priceId" : "param.priceId",
             "out.quantity" : "param.quantity"
           }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "url", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "result.url" : "in.priceId"
+          }
         }
       },
       "visual" : {
@@ -132,7 +140,11 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.stripe.api.client.PaymentLink"
+            "type" : "com.stripe.api.client.PaymentLink",
+            "map" : {
+              "out.priceId" : "result.url"
+            },
+            "code" : "ivy.log.warn(in.priceId);"
           }
         }
       },
