@@ -38,8 +38,8 @@ public class PaymentService {
   
   public List<LineItemsCreateParams> createParamsForCallable2(String priceId, int quantity) {
 	    LineItemsCreateParams params = new LineItemsCreateParams();
-	    params.setPrice(priceId);
-	    params.setQuantity(quantity);
+	    params.setPrice("price_1QeSG6LaeAomYD3LfEHlcjEr");
+	    params.setQuantity(2);
 	    return List.of(params);
 	  }
 

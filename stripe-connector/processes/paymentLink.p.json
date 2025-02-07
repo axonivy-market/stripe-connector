@@ -84,12 +84,48 @@
             "" : ""
           },
           "headers" : {
+            "Accept" : "application/x-www-form-urlencoded",
             "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
+          },
+          "properties" : {
+            "" : ""
           }
         },
         "body" : {
           "type" : "FORM",
           "mediaType" : "application/x-www-form-urlencoded",
+          "form" : {
+            "after_completion" : [ "" ],
+            "allow_promotion_codes" : [ "" ],
+            "application_fee_amount" : [ "" ],
+            "application_fee_percent" : [ "" ],
+            "automatic_tax" : [ "" ],
+            "billing_address_collection" : [ "" ],
+            "consent_collection" : [ "" ],
+            "currency" : [ "" ],
+            "custom_fields" : [ "" ],
+            "custom_text" : [ "" ],
+            "customer_creation" : [ "" ],
+            "expand" : [ "" ],
+            "inactive_message" : [ "" ],
+            "invoice_creation" : [ "" ],
+            "line_items" : [ "" ],
+            "metadata" : [ "" ],
+            "on_behalf_of" : [ "" ],
+            "payment_intent_data" : [ "" ],
+            "payment_method_collection" : [ "" ],
+            "payment_method_types" : [ "" ],
+            "phone_number_collection" : [ "" ],
+            "restrictions" : [ "" ],
+            "shipping_address_collection" : [ "" ],
+            "shipping_options" : [ "" ],
+            "submit_type" : [ "" ],
+            "subscription_data" : [ "" ],
+            "tax_id_collection" : [ "" ],
+            "transfer_data" : [ "" ],
+            "line_items[0][price]" : [ "\"price_1QeSG6LaeAomYD3LfEHlcjEr\"" ],
+            "line_items[0][quantity]" : [ "12" ]
+          },
           "entity" : {
             "type" : "com.stripe.api.client.V1PaymentLinksBody"
           }
