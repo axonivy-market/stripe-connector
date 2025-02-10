@@ -13,4 +13,5 @@ public class StripeDataTypeCustomizations extends SimpleModule {
     addDeserializer(PaymentLink.class, new PaymentLinkDeserializer());
     addDeserializer(CheckoutSession.class, new EmbededCheckoutSessionDeserializer());
   }
+
 }

@@ -4,6 +4,7 @@ import javax.ws.rs.Priorities;
 import javax.ws.rs.core.FeatureContext;
 import javax.ws.rs.core.MediaType;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
@@ -23,6 +24,7 @@ public class StripeDataJsonFeature extends JsonFeature {
     @Override
     public ObjectMapper locateMapper(Class<?> type, MediaType mediaType) {
       ObjectMapper mapper = super.locateMapper(type, mediaType);
+      mapper.setSerializationInclusion(Include.NON_NULL);
       mapper.registerModule(new StripeDataTypeCustomizations());
       return mapper;
     }

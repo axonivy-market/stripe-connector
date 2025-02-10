@@ -37,7 +37,7 @@ public class PaymentService {
   public void test() {
     SubProcessCallResult callResult =
         SubProcessCall.withPath("embededCheckoutSession").withStartName("embededCheckoutSession")
-            .withParam("priceId", "price_1QeSG6LaeAomYD3LfEHlcjEr").withParam("quantity", 2).call();
+            .withParam("priceId", "price_1QeXzELaeAomYD3LHr9WqImT").withParam("quantity", 2).call();
     if (callResult != null) {
       Ivy.log().warn(callResult.get("clientSecret"));
     }
