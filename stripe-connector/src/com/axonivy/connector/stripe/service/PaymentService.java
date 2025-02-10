@@ -21,6 +21,8 @@ import static com.stripe.param.checkout.SessionCreateParams.PaymentMethodType.SE
 
 public class PaymentService {
   private static final String EURO_CURRENCY = "eur";
+  private static final String CLIENT_SECRET = "clientSecret";
+  private static final String URL = "clientSecret";
   private static final PaymentService instance = new PaymentService();
   private static final List<SessionCreateParams.PaymentMethodType> SUPPORTED_PAYMENT_METHOD_TYPES =
       new ArrayList<>(List.of(CARD));
@@ -33,28 +35,18 @@ public class PaymentService {
     return instance;
   }
 
-
-  public void test() {
-    SubProcessCallResult callResult =
-        SubProcessCall.withPath("embededCheckoutSession").withStartName("embededCheckoutSession")
-            .withParam("priceId", "price_1QeXzELaeAomYD3LHr9WqImT").withParam("quantity", 2).call();
-    if (callResult != null) {
-      Ivy.log().warn(callResult.get("clientSecret"));
-    }
-  }
-
   public String getClientSecretViaOpenApi(String priceId, Long quantity) {
     SubProcessCallResult callResult = SubProcessCall.withPath("embededCheckoutSession")
         .withStartName("embededCheckoutSession").withParam("priceId", priceId).withParam("quantity", quantity).call();
 
-    return callResult != null ? callResult.get("clientSecret").toString() : null;
+    return callResult != null ? callResult.get(CLIENT_SECRET).toString() : null;
   }
 
   public String getPaymentLinkViaOpenApi(String priceId, Long quantity) {
     SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("paymentLink")
         .withParam("priceId", priceId).withParam("quantity", quantity).call();
 
-    return callResult != null ? callResult.get("url").toString() : null;
+    return callResult != null ? callResult.get(URL).toString() : null;
   }
 
 

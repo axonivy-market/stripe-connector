@@ -21,17 +21,19 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 352, "y" : 64 },
+        "at" : { "x" : 480, "y" : 64 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
     }, {
       "id" : "f3",
       "type" : "DialogCall",
+      "name" : "Show paymentLink form",
       "config" : {
         "dialog" : "com.axonivy.connector.stripe.CreatePaymentLinkDemo:start()"
       },
       "visual" : {
-        "at" : { "x" : 224, "y" : 64 }
+        "at" : { "x" : 292, "y" : 65 },
+        "size" : { "width" : 152, "height" : 62 }
       },
       "connect" : [
         { "id" : "f4", "to" : "f1", "color" : "default" }

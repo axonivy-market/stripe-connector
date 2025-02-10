@@ -125,44 +125,6 @@
         { "id" : "f4", "to" : "f1", "color" : "default" }
       ]
     }, {
-      "id" : "f5",
-      "type" : "RequestStart",
-      "name" : "start",
-      "config" : {
-        "signature" : "start"
-      },
-      "visual" : {
-        "at" : { "x" : 96, "y" : 224 }
-      },
-      "connect" : [
-        { "id" : "f8", "to" : "f6" }
-      ]
-    }, {
-      "id" : "f6",
-      "type" : "Script",
-      "config" : {
-        "output" : {
-          "code" : [
-            "import com.axonivy.connector.stripe.service.PaymentService;",
-            "PaymentService.getInstance().test();"
-          ]
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 328, "y" : 224 },
-        "size" : { "width" : 160, "height" : 62 }
-      },
-      "connect" : [
-        { "id" : "f9", "to" : "f7" }
-      ]
-    }, {
-      "id" : "f7",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 568, "y" : 224 },
-        "labelOffset" : { "x" : 13, "y" : 33 }
-      }
-    }, {
       "id" : "f10",
       "type" : "Script",
       "name" : "Get payment mode",
