@@ -19,22 +19,33 @@ public class EmbededCheckoutSessionDeserializer extends JsonDeserializer<Checkou
 
   @Override
   public CheckoutSession deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException {
+    Ivy.log().warn("deserialize() called (No Type Info)");
     return parseCheckoutSession(parser);
   }
 
   @Override
   public CheckoutSession deserializeWithType(JsonParser parser, DeserializationContext ctxt,
       TypeDeserializer typeDeserializer) throws IOException {
-    return (CheckoutSession) typeDeserializer.deserializeTypedFromObject(parser, ctxt);
+    Ivy.log().warn("deserializeWithType() called (With Type Info)");
+
+    // Delegate to Jackson's type deserializer
+    Object deserialized = typeDeserializer.deserializeTypedFromObject(parser, ctxt);
+    if (deserialized instanceof CheckoutSession) {
+      return (CheckoutSession) deserialized;
+    }
+
+    // Fallback in case type information is missing
+    return parseCheckoutSession(parser);
   }
 
   private CheckoutSession parseCheckoutSession(JsonParser parser) throws IOException {
     JsonNode node = parser.readValueAsTree();
     CheckoutSession result = new CheckoutSession();
+
     if (node.has("client_secret") && !node.get("client_secret").isNull()) {
       result.setClientSecret(node.get("client_secret").asText());
     } else {
-      Ivy.log().warn("client_secret field is missing or null in JSON");
+      Ivy.log().warn("Warning: 'client_secret' field is missing or null in JSON");
     }
 
     return result;
