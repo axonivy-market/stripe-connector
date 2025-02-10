@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
-  "simpleName" : "EmbededCheckoutData",
-  "namespace" : "com.axonivy.connector.stripe",
+  "simpleName" : "PaymentLinkDemoData",
+  "namespace" : "viaOpenApi",
   "isBusinessCaseData" : false
 }

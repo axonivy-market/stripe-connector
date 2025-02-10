@@ -6,7 +6,7 @@ RestClients:
     Url: https://api.stripe.com/
     Features:
     - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
-    - com.axonivy.connector.stripe.OSDMDataJsonFeature
+    - com.axonivy.connector.stripe.deserializers.StripeDataJsonFeature
     OpenAPI:
       SpecUrl: file:///D:/work/Project/MARKET/stripe-connector/stripe-connector-product/openapi.json
       Namespace: com.stripe.api.client

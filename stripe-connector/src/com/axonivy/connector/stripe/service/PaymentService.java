@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.stripe.Stripe;
-import com.stripe.api.client.LineItemsCreateParams;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentLink;
 import com.stripe.model.Price;
@@ -15,8 +14,6 @@ import com.stripe.param.checkout.SessionCreateParams;
 import com.stripe.param.checkout.SessionCreateParams.RedirectOnCompletion;
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.process.call.SubProcessCall;
-//import ch.ivyteam.ivy.process.call.SubProcessCall;
-//import ch.ivyteam.ivy.process.call.SubProcessCallResult;
 import ch.ivyteam.ivy.process.call.SubProcessCallResult;
 
 import static com.stripe.param.checkout.SessionCreateParams.PaymentMethodType.CARD;
@@ -35,24 +32,31 @@ public class PaymentService {
   public static PaymentService getInstance() {
     return instance;
   }
-  
-  public List<LineItemsCreateParams> createParamsForCallable2(String priceId, int quantity) {
-	    LineItemsCreateParams params = new LineItemsCreateParams();
-	    params.setPrice("price_1QeSG6LaeAomYD3LfEHlcjEr");
-	    params.setQuantity(2);
-	    return List.of(params);
-	  }
 
-	  public void test() {
-	    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("paymentLink")
-	        .withParam("priceId", "price_1QeSG6LaeAomYD3LfEHlcjEr").withParam("quantity", 2).call();
 
-	    if (callResult != null) {
+  public void test() {
+    SubProcessCallResult callResult =
+        SubProcessCall.withPath("embededCheckoutSession").withStartName("embededCheckoutSession")
+            .withParam("priceId", "price_1QeSG6LaeAomYD3LfEHlcjEr").withParam("quantity", 2).call();
+    if (callResult != null) {
+      Ivy.log().warn(callResult.get("clientSecret"));
+    }
+  }
 
-	      Ivy.log().warn(callResult.get("url"));
-	    }
+  public String getClientSecretViaOpenApi(String priceId, Long quantity) {
+    SubProcessCallResult callResult = SubProcessCall.withPath("embededCheckoutSession")
+        .withStartName("embededCheckoutSession").withParam("priceId", priceId).withParam("quantity", quantity).call();
 
-	  }
+    return callResult != null ? callResult.get("clientSecret").toString() : null;
+  }
+
+  public String getPaymentLinkViaOpenApi(String priceId, Long quantity) {
+    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("paymentLink")
+        .withParam("priceId", priceId).withParam("quantity", quantity).call();
+
+    return callResult != null ? callResult.get("url").toString() : null;
+  }
+
 
   public PaymentLink createPaymentLink(String priceId, Long quantity) throws StripeException {
     PaymentLinkCreateParams params = PaymentLinkCreateParams.builder()
@@ -62,12 +66,9 @@ public class PaymentService {
   }
 
   public Session createCheckoutSession(String priceId, Long quantity) throws StripeException {
-    Price price = Price.retrieve(priceId);
+    Price price = this.retrievePrice(priceId);
 
-    SessionCreateParams.Mode paymentMode = Optional.of(price).map(Price::getRecurring)
-        .map(r -> SessionCreateParams.Mode.SUBSCRIPTION).orElse(SessionCreateParams.Mode.PAYMENT);
-
-    SessionCreateParams params = SessionCreateParams.builder().setMode(paymentMode)
+    SessionCreateParams params = SessionCreateParams.builder().setMode(getPaymentMode(price))
         .setUiMode(SessionCreateParams.UiMode.EMBEDDED).setRedirectOnCompletion(RedirectOnCompletion.NEVER)
         .addAllPaymentMethodType(getSupportedPaymentMethodTypes(price))
         .addLineItem(SessionCreateParams.LineItem.builder().setPrice(priceId).setQuantity(quantity).build()).build();
@@ -75,7 +76,7 @@ public class PaymentService {
     return Session.create(params);
   }
 
-  private List<SessionCreateParams.PaymentMethodType> getSupportedPaymentMethodTypes(Price price) {
+  public List<SessionCreateParams.PaymentMethodType> getSupportedPaymentMethodTypes(Price price) {
     if (EURO_CURRENCY.equals(price.getCurrency())) {
       SUPPORTED_PAYMENT_METHOD_TYPES.add(SEPA_DEBIT);
     }
@@ -89,5 +90,10 @@ public class PaymentService {
       Ivy.log().error(exception.getUserMessage());
       return null;
     }
+  }
+
+  public SessionCreateParams.Mode getPaymentMode(Price price) {
+    return Optional.of(price).map(Price::getRecurring).map(r -> SessionCreateParams.Mode.SUBSCRIPTION)
+        .orElse(SessionCreateParams.Mode.PAYMENT);
   }
 }

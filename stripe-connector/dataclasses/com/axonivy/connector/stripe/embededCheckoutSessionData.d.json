@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
-  "simpleName" : "paymentLinkData",
+  "simpleName" : "embededCheckoutSessionData",
   "namespace" : "com.axonivy.connector.stripe",
   "isBusinessCaseData" : false,
   "fields" : [ {
@@ -13,6 +13,10 @@
     "modifiers" : [ "PERSISTENT" ]
   }, {
     "name" : "result",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "paymentMode",
     "type" : "String",
     "modifiers" : [ "PERSISTENT" ]
   } ]

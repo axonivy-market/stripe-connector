@@ -1,0 +1,191 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "194EDBE6BFE7ECFD",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.connector.stripe.embededCheckoutSessionData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "embededCheckoutSession(String,Number)",
+      "config" : {
+        "signature" : "embededCheckoutSession",
+        "input" : {
+          "params" : [
+            { "name" : "priceId", "type" : "String", "desc" : "" },
+            { "name" : "quantity", "type" : "Number", "desc" : "" }
+          ],
+          "map" : {
+            "out.priceId" : "param.priceId",
+            "out.quantity" : "param.quantity"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "clientSecret", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "result.clientSecret" : "in.result"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f10" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 712, "y" : 64 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Get the client secret to open embeded checkout form",
+      "config" : {
+        "method" : "POST",
+        "target" : {
+          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "path" : "/v1/checkout/sessions",
+          "headers" : {
+            "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
+          }
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "application/x-www-form-urlencoded",
+          "form" : {
+            "adaptive_pricing" : [ "" ],
+            "after_expiration" : [ "" ],
+            "allow_promotion_codes" : [ "" ],
+            "automatic_tax" : [ "" ],
+            "billing_address_collection" : [ "" ],
+            "cancel_url" : [ "" ],
+            "client_reference_id" : [ "" ],
+            "consent_collection" : [ "" ],
+            "currency" : [ "" ],
+            "custom_fields" : [ "" ],
+            "custom_text" : [ "" ],
+            "customer" : [ "" ],
+            "customer_creation" : [ "" ],
+            "customer_email" : [ "" ],
+            "customer_update" : [ "" ],
+            "discounts" : [ "" ],
+            "expand" : [ "" ],
+            "expires_at" : [ "" ],
+            "invoice_creation" : [ "" ],
+            "line_items" : [ "" ],
+            "locale" : [ "" ],
+            "metadata" : [ "" ],
+            "mode" : [ "in.paymentMode" ],
+            "payment_intent_data" : [ "" ],
+            "payment_method_collection" : [ "" ],
+            "payment_method_configuration" : [ "" ],
+            "payment_method_data" : [ "" ],
+            "payment_method_options" : [ "" ],
+            "payment_method_types" : [ "" ],
+            "phone_number_collection" : [ "" ],
+            "redirect_on_completion" : [ "\"never\"" ],
+            "return_url" : [ "" ],
+            "saved_payment_method_options" : [ "" ],
+            "setup_intent_data" : [ "" ],
+            "shipping_address_collection" : [ "" ],
+            "shipping_options" : [ "" ],
+            "submit_type" : [ "" ],
+            "subscription_data" : [ "" ],
+            "success_url" : [ "" ],
+            "tax_id_collection" : [ "" ],
+            "ui_mode" : [ "\"embedded\"" ],
+            "line_items[0][price]" : [ "in.priceId" ],
+            "line_items[0][quantity]" : [ "in.quantity" ]
+          },
+          "entity" : {
+            "type" : "com.stripe.api.client.CheckoutSessionsBody"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.stripe.api.client.CheckoutSession",
+            "map" : {
+              "out.result" : "result.clientSecret"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 512, "y" : 64 },
+        "size" : { "width" : 160, "height" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1", "color" : "default" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "RequestStart",
+      "name" : "start",
+      "config" : {
+        "signature" : "start"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 224 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.connector.stripe.service.PaymentService;",
+            "PaymentService.getInstance().test();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 328, "y" : 224 },
+        "size" : { "width" : 160, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f9", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 568, "y" : 224 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f10",
+      "type" : "Script",
+      "name" : "Get payment mode",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import ch.ivyteam.ivy.environment.Ivy;",
+            "import com.axonivy.connector.stripe.service.PaymentService;",
+            "import com.stripe.model.Price;",
+            "PaymentService service = PaymentService.getInstance();",
+            "",
+            "Price price = service.retrievePrice(in.priceId);",
+            "",
+            "in.paymentMode = service.getPaymentMode(price).getValue();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 304, "y" : 64 },
+        "size" : { "width" : 136, "height" : 54 }
+      },
+      "connect" : [
+        { "id" : "f11", "to" : "f3", "color" : "default" }
+      ]
+    } ]
+}

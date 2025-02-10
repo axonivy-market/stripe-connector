@@ -19,4 +19,13 @@ public class StripeApiEndpoint {
     Session session = PaymentService.getInstance().createCheckoutSession(priceId, quantity);
     return Response.ok("{\"clientSecret\":\"" + session.getClientSecret() + "\"}").build();
   }
+
+  @POST
+  @Path("/create-checkout-session/openapi/{priceId}/{quantity}")
+  @Produces("application/json")
+  public Response createCheckoutSessionViaOpenApi(@PathParam("priceId") String priceId,
+      @PathParam("quantity") Long quantity) throws StripeException {
+    String clientSecret = PaymentService.getInstance().getClientSecretViaOpenApi(priceId, quantity);
+    return Response.ok("{\"clientSecret\":\"" + clientSecret + "\"}").build();
+  }
 }

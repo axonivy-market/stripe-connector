@@ -19,6 +19,11 @@ public class PaymentLinkBean {
     result = paymentLink.getUrl();
     this.disableForm = true;
   }
+  
+  public void onSendRequestViaOpenApi() throws StripeException {
+    result = PaymentService.getInstance().getPaymentLinkViaOpenApi(priceId, quantity);
+    this.disableForm = true;
+  }
 
   public String getPriceId() {
     return priceId;

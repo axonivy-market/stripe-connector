@@ -3,14 +3,13 @@
  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
  xmlns:ic="http://ivyteam.ch/jsf/component" xmlns:p="http://primefaces.org/ui"
  xmlns:pe="http://primefaces.org/ui/extensions">
+
 <h:body>
  <ui:composition template="/layouts/frame-10-full-width.xhtml">
-  <ui:param name="managedBean" value="#{paymentLinkBean}" />
-  <ui:define name="title">#{ivy.cms.co("/Dialogs/com/axonivy/connector/stripe/demo/PaymendLinkDemo/paymentLinkTitle")}</ui:define>
+  <ui:param name="managedBean" value="#{createCheckoutSessionBean}" />
+  <ui:define name="title">#{ivy.cms.co("/Dialogs/com/axonivy/connector/stripe/demo/CreateCheckoutSessionDemo/createCheckoutSessionTitle")}</ui:define>
   <ui:define name="content">
-
-   <h3>#{ivy.cms.co("/Dialogs/com/axonivy/connector/stripe/demo/PaymendLinkDemo/createPaymentLink")}</h3>
-
+   <h3>#{ivy.cms.co("/Dialogs/com/axonivy/connector/stripe/demo/CreateCheckoutSessionDemo/embedStripeCheckoutSession")}</h3>
    <h:form id="form">
     <p:panelGrid columns="3" layout="grid"
      styleClass="ui-panelgrid-blank ui-fluid"
@@ -24,27 +23,31 @@
      <p:message for="price" />
 
      <p:outputLabel for="quantity" value="Quantity" />
-     <p:inputNumber id="quantity" value="#{managedBean.quantity}"
-      disabled="#{managedBean.disableForm}">
+     <p:inputNumber id="quantity" disabled="#{managedBean.disableForm}"
+      value="#{managedBean.quantity}">
       <f:validator validatorId="quantityValidator" />
      </p:inputNumber>
      <p:message for="quantity" />
-
-     <p:outputLabel for="result" value="Result" />
-     <p:inputTextarea id="result" rows="6" cols="33"
-      value="#{managedBean.result}" />
 
     </p:panelGrid>
     <br />
     <div class="command-btns">
      <p:commandLink id="cancel" actionListener="#{logic.close}" value="Cancel"
       immediate="true" />
-     <p:commandButton id="createPaymentLink" widgetVar="btn"
-      disabled="#{managedBean.disableForm}"
-      actionListener="#{managedBean.onSendRequest()}" value="Create"
-      update="form" icon="pi pi-check" />
+     <p:commandButton id="resquest-button" widgetVar="btn"
+      disabled="#{managedBean.disableForm}" process="@form"
+      update="form stripeContainer" value="Create" icon="pi pi-check"
+      actionListener="#{managedBean.onRequest}"
+      oncomplete="if (!args.validationFailed) {startCheckout();}" />
+
     </div>
+    <br />
+    <h:panelGroup id="stripeContainer">
+     <ic:com.axonivy.connector.stripe.StripeEmbededCheckoutViaOpenApi
+      quantity="#{managedBean.quantity}" priceId="#{managedBean.priceId}" />
+    </h:panelGroup>
    </h:form>
+
   </ui:define>
  </ui:composition>
 </h:body>

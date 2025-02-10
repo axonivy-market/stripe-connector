@@ -26,12 +26,12 @@
             { "name" : "url", "type" : "String", "desc" : "" }
           ],
           "map" : {
-            "result.url" : "in.priceId"
+            "result.url" : "in.result"
           }
         }
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 64 }
+        "at" : { "x" : 208, "y" : 64 }
       },
       "connect" : [
         { "id" : "f2", "to" : "f8" }
@@ -40,49 +40,13 @@
       "id" : "f1",
       "type" : "CallSubEnd",
       "visual" : {
-        "at" : { "x" : 520, "y" : 64 },
-        "labelOffset" : { "x" : 13, "y" : 33 }
-      }
-    }, {
-      "id" : "f3",
-      "type" : "RequestStart",
-      "name" : "start",
-      "config" : {
-        "signature" : "start"
-      },
-      "visual" : {
-        "at" : { "x" : 80, "y" : 224 }
-      },
-      "connect" : [
-        { "id" : "f7", "to" : "f4" }
-      ]
-    }, {
-      "id" : "f4",
-      "type" : "Script",
-      "config" : {
-        "output" : {
-          "code" : [
-            "import com.axonivy.connector.stripe.service.PaymentService;",
-            "PaymentService.getInstance().test();"
-          ]
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 216, "y" : 224 }
-      },
-      "connect" : [
-        { "id" : "f6", "to" : "f5" }
-      ]
-    }, {
-      "id" : "f5",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 336, "y" : 224 },
+        "at" : { "x" : 592, "y" : 64 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
     }, {
       "id" : "f8",
       "type" : "RestClientCall",
+      "name" : "Get the Stripe's paymentLink",
       "config" : {
         "method" : "POST",
         "target" : {
@@ -131,8 +95,8 @@
             "subscription_data" : [ "" ],
             "tax_id_collection" : [ "" ],
             "transfer_data" : [ "" ],
-            "line_items[0][price]" : [ "\"price_1QeSG6LaeAomYD3LfEHlcjEr\"" ],
-            "line_items[0][quantity]" : [ "12" ]
+            "line_items[0][price]" : [ "in.priceId" ],
+            "line_items[0][quantity]" : [ "in.quantity" ]
           },
           "entity" : {
             "type" : "com.stripe.api.client.V1PaymentLinksBody"
@@ -142,14 +106,14 @@
           "entity" : {
             "type" : "com.stripe.api.client.PaymentLink",
             "map" : {
-              "out.priceId" : "result.url"
-            },
-            "code" : "ivy.log.warn(in.priceId);"
+              "out.result" : "result.url"
+            }
           }
         }
       },
       "visual" : {
-        "at" : { "x" : 280, "y" : 64 }
+        "at" : { "x" : 416, "y" : 64 },
+        "size" : { "width" : 144, "height" : 62 }
       },
       "connect" : [
         { "id" : "f9", "to" : "f1", "color" : "default" }
