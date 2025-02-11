@@ -1,7 +1,8 @@
 
 # Stripe-Connector
 Stripe is a comprehensive payment processing platform that enables businesses to accept payments online and in-person. It provides a seamless API for integrating various payment methods, including credit/debit cards, digital wallets, bank transfers, and more. 
-supports recurring billing, subscription management, fraud prevention, and detailed analytics, making it ideal for startups, e-commerce, SaaS, and enterprise-level applications.
+
+
 
 ## Demo
 
