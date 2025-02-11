@@ -22,7 +22,7 @@ import static com.stripe.param.checkout.SessionCreateParams.PaymentMethodType.SE
 public class PaymentService {
   private static final String EURO_CURRENCY = "eur";
   private static final String CLIENT_SECRET = "clientSecret";
-  private static final String URL = "clientSecret";
+  private static final String URL = "url";
   private static final PaymentService instance = new PaymentService();
   private static final List<SessionCreateParams.PaymentMethodType> SUPPORTED_PAYMENT_METHOD_TYPES =
       new ArrayList<>(List.of(CARD));
