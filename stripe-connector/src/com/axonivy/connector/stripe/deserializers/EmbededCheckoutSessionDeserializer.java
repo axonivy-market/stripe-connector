@@ -19,14 +19,12 @@ public class EmbededCheckoutSessionDeserializer extends JsonDeserializer<Checkou
 
   @Override
   public CheckoutSession deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException {
-    Ivy.log().warn("deserialize() called (No Type Info)");
     return deserializeWithType(parser, ctxt, null);
   }
 
   @Override
   public CheckoutSession deserializeWithType(JsonParser parser, DeserializationContext ctxt,
       TypeDeserializer typeDeserializer) throws IOException {
-    Ivy.log().warn("deserializeWithType() called (With Type Info)");
     return parseCheckoutSession(parser);
   }
 
