@@ -30,7 +30,7 @@ public class PaymentServiceTest {
       "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
   @BeforeEach
-  public  void setup(AppFixture appFixture) {
+  public static void setup(AppFixture appFixture) {
     StripeUtils.setUpConfigForApiTest(appFixture);
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless"); // Run in headless mode (no GUI)
