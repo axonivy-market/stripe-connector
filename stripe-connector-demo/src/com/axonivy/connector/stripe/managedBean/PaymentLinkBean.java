@@ -2,7 +2,6 @@ package com.axonivy.connector.stripe.managedBean;
 
 import com.axonivy.connector.stripe.service.PaymentService;
 import com.stripe.exception.StripeException;
-import com.stripe.model.PaymentLink;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -14,12 +13,6 @@ public class PaymentLinkBean {
   private String result;
   private boolean disableForm;
 
-  public void onSendRequest() throws StripeException {
-    PaymentLink paymentLink = PaymentService.getInstance().createPaymentLink(priceId, quantity);
-    result = paymentLink.getUrl();
-    this.disableForm = true;
-  }
-  
   public void onSendRequestViaOpenApi() throws StripeException {
     result = PaymentService.getInstance().getPaymentLinkViaOpenApi(priceId, quantity);
     this.disableForm = true;

@@ -1,31 +1,23 @@
 package com.axonivy.connector.stripe.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
-import com.stripe.model.PaymentLink;
 import com.stripe.model.Price;
-import com.stripe.model.checkout.Session;
-import com.stripe.param.PaymentLinkCreateParams;
 import com.stripe.param.checkout.SessionCreateParams;
-import com.stripe.param.checkout.SessionCreateParams.RedirectOnCompletion;
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.process.call.SubProcessCall;
 import ch.ivyteam.ivy.process.call.SubProcessCallResult;
 
-import static com.stripe.param.checkout.SessionCreateParams.PaymentMethodType.CARD;
-import static com.stripe.param.checkout.SessionCreateParams.PaymentMethodType.SEPA_DEBIT;
 
 public class PaymentService {
-  private static final String EURO_CURRENCY = "eur";
   private static final String CLIENT_SECRET = "clientSecret";
   private static final String URL = "url";
+  private static final String PRICE_ID = "priceId";
+  private static final String QUANTITY = "quantity";
   private static final PaymentService instance = new PaymentService();
-  private static final List<SessionCreateParams.PaymentMethodType> SUPPORTED_PAYMENT_METHOD_TYPES =
-      new ArrayList<>(List.of(CARD));
+
 
   public PaymentService() {
     Stripe.apiKey = Ivy.var().get("stripe.auth.secretKey");
@@ -37,42 +29,16 @@ public class PaymentService {
 
   public String getClientSecretViaOpenApi(String priceId, Long quantity) {
     SubProcessCallResult callResult = SubProcessCall.withPath("embededCheckoutSession")
-        .withStartName("embededCheckoutSession").withParam("priceId", priceId).withParam("quantity", quantity).call();
+        .withStartName("embededCheckoutSession").withParam(PRICE_ID, priceId).withParam(QUANTITY, quantity).call();
 
     return callResult != null ? callResult.get(CLIENT_SECRET).toString() : null;
   }
 
   public String getPaymentLinkViaOpenApi(String priceId, Long quantity) {
     SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("paymentLink")
-        .withParam("priceId", priceId).withParam("quantity", quantity).call();
+        .withParam(PRICE_ID, priceId).withParam(QUANTITY, quantity).call();
 
     return callResult != null ? callResult.get(URL).toString() : null;
-  }
-
-
-  public PaymentLink createPaymentLink(String priceId, Long quantity) throws StripeException {
-    PaymentLinkCreateParams params = PaymentLinkCreateParams.builder()
-        .addLineItem(PaymentLinkCreateParams.LineItem.builder().setPrice(priceId).setQuantity(quantity).build())
-        .build();
-    return PaymentLink.create(params);
-  }
-
-  public Session createCheckoutSession(String priceId, Long quantity) throws StripeException {
-    Price price = this.retrievePrice(priceId);
-
-    SessionCreateParams params = SessionCreateParams.builder().setMode(getPaymentMode(price))
-        .setUiMode(SessionCreateParams.UiMode.EMBEDDED).setRedirectOnCompletion(RedirectOnCompletion.NEVER)
-        .addAllPaymentMethodType(getSupportedPaymentMethodTypes(price))
-        .addLineItem(SessionCreateParams.LineItem.builder().setPrice(priceId).setQuantity(quantity).build()).build();
-
-    return Session.create(params);
-  }
-
-  public List<SessionCreateParams.PaymentMethodType> getSupportedPaymentMethodTypes(Price price) {
-    if (EURO_CURRENCY.equals(price.getCurrency())) {
-      SUPPORTED_PAYMENT_METHOD_TYPES.add(SEPA_DEBIT);
-    }
-    return SUPPORTED_PAYMENT_METHOD_TYPES;
   }
 
   public Price retrievePrice(String priceId) {
