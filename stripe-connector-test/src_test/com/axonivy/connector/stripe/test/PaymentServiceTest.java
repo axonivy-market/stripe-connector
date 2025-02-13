@@ -25,7 +25,7 @@ public class PaymentServiceTest {
 
   private static final String CHECKOUT_SESSION_VIA_OPENAPI = "/stripe-connector-demo/194EE3B279B2B3BD/start.ivp";
   private static final String PAYMENTLINK_VIA_OPENAPI =
-      "/stripe-connector-demo/194ED891756337A7/PaymentLinkOpenApiDemo.ivp";
+      "/stripe-connector-demo/194ED891756337A7/start.ivp";
   private static final String LOG_IN =
       "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
@@ -60,7 +60,6 @@ public class PaymentServiceTest {
     Selenide.switchTo().alert().accept();
     $(By.className("PaymentSuccess")).shouldBe(visible);
   }
-
 
   private void clickAndInputValue(String id, String value) {
     $(By.id(id)).click();

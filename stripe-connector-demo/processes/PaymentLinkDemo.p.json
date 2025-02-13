@@ -2,14 +2,14 @@
   "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "194ED891756337A7",
   "config" : {
-    "data" : "viaOpenApi.PaymentLinkDemoData"
+    "data" : "com.axonivy.connector.stripe.PaymentLinkDemoData"
   },
   "elements" : [ {
       "id" : "f0",
       "type" : "RequestStart",
-      "name" : "PaymentLinkOpenApiDemo",
+      "name" : "start",
       "config" : {
-        "signature" : "PaymentLinkOpenApiDemo"
+        "signature" : "start"
       },
       "visual" : {
         "at" : { "x" : 176, "y" : 64 }
