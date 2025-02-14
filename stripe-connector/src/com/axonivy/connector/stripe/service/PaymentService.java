@@ -27,14 +27,14 @@ public class PaymentService {
     return instance;
   }
 
-  public String getClientSecretViaOpenApi(String priceId, Long quantity) {
+  public String getClientSecret(String priceId, Long quantity) {
     SubProcessCallResult callResult = SubProcessCall.withPath("embededCheckoutSession")
         .withStartName("embededCheckoutSession").withParam(PRICE_ID, priceId).withParam(QUANTITY, quantity).call();
 
     return callResult != null ? callResult.get(CLIENT_SECRET).toString() : null;
   }
 
-  public String getPaymentLinkViaOpenApi(String priceId, Long quantity) {
+  public String getPaymentLink(String priceId, Long quantity) {
     SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("paymentLink")
         .withParam(PRICE_ID, priceId).withParam(QUANTITY, quantity).call();
 

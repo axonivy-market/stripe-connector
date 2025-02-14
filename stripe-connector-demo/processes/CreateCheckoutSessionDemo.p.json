@@ -29,7 +29,7 @@
       "type" : "DialogCall",
       "name" : "Show embeded checkout session form",
       "config" : {
-        "dialog" : "com.axonivy.connector.stripe.CreateCheckoutSessionDemoViaOpenApi:start()"
+        "dialog" : "com.axonivy.connector.stripe.CreateCheckoutSessionDemo:start()"
       },
       "visual" : {
         "at" : { "x" : 328, "y" : 65 },

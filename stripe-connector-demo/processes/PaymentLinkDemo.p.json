@@ -29,7 +29,7 @@
       "type" : "DialogCall",
       "name" : "Show paymentLink form",
       "config" : {
-        "dialog" : "com.axonivy.connector.stripe.CreatePaymentLinkDemoViaOpenApi:start()"
+        "dialog" : "com.axonivy.connector.stripe.CreatePaymentLinkDemo:start()"
       },
       "visual" : {
         "at" : { "x" : 360, "y" : 64 },

@@ -3,7 +3,7 @@
   "id" : "194ED8AF1889F3F3",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "com.axonivy.connector.stripe.CreatePaymentLinkDemoViaOpenApi.CreatePaymentLinkDemoViaOpenApiData"
+    "data" : "com.axonivy.connector.stripe.CreatePaymentLinkDemo.CreatePaymentLinkDemoData"
   },
   "elements" : [ {
       "id" : "f0",

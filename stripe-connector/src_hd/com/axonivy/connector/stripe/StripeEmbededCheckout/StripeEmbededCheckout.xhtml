@@ -24,7 +24,7 @@
   <script src="https://js.stripe.com/v3/"></script>
   <script type="text/javascript">
 		function startCheckout() {
-			const url = "#{ivy.request.application.contextPath}" + "/api/stripe/create-checkout-session/openapi/" + "#{priceId}" + "/" + "#{quantity}";
+			const url = "#{ivy.request.application.contextPath}" + "/api/stripe/create-checkout-session/" + "#{priceId}" + "/" + "#{quantity}";
 		    fetch(url, {
 		        method: 'POST',
 		        headers: { 'Content-Type': 'application/json' , 'X-Requested-By': 'ivy'}

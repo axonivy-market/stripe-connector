@@ -12,11 +12,11 @@ import com.stripe.exception.StripeException;
 public class StripeApiEndpoint {
 
   @POST
-  @Path("/create-checkout-session/openapi/{priceId}/{quantity}")
+  @Path("/create-checkout-session/{priceId}/{quantity}")
   @Produces("application/json")
-  public Response createCheckoutSessionViaOpenApi(@PathParam("priceId") String priceId,
+  public Response createCheckoutSession(@PathParam("priceId") String priceId,
       @PathParam("quantity") Long quantity) throws StripeException {
-    String clientSecret = PaymentService.getInstance().getClientSecretViaOpenApi(priceId, quantity);
+    String clientSecret = PaymentService.getInstance().getClientSecret(priceId, quantity);
     return Response.ok("{\"clientSecret\":\"" + clientSecret + "\"}").build();
   }
 }

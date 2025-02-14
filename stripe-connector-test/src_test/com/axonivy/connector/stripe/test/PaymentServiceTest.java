@@ -23,9 +23,8 @@ import static com.codeborne.selenide.Condition.visible;
 @IvyProcessTest
 public class PaymentServiceTest {
 
-  private static final String CHECKOUT_SESSION_VIA_OPENAPI = "/stripe-connector-demo/194EE3B279B2B3BD/start.ivp";
-  private static final String PAYMENTLINK_VIA_OPENAPI =
-      "/stripe-connector-demo/194ED891756337A7/start.ivp";
+  private static final String CHECKOUT_SESSION = "/stripe-connector-demo/194EE3B279B2B3BD/start.ivp";
+  private static final String PAYMENTLINK = "/stripe-connector-demo/194ED891756337A7/start.ivp";
   private static final String LOG_IN =
       "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
@@ -41,9 +40,9 @@ public class PaymentServiceTest {
 
 
   @TestTemplate
-  void testCreateCheckoutSessionViaOpenApi() {
+  void testCreateCheckoutSession() {
     open(EngineUrl.createProcessUrl(LOG_IN));
-    open(EngineUrl.createProcessUrl(CHECKOUT_SESSION_VIA_OPENAPI));
+    open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
     $(By.id("form:price")).sendKeys("price_1QeSG6LaeAomYD3LfEHlcjEr");
     $(By.id("form:quantity_input")).sendKeys("2");
     $(By.id("form:resquest-button")).click();
@@ -67,8 +66,8 @@ public class PaymentServiceTest {
   }
 
   @TestTemplate
-  void testCreatePaymentLinkViaOpenAPI() {
-    open(EngineUrl.createProcessUrl(PAYMENTLINK_VIA_OPENAPI));
+  void testCreatePaymentLink() {
+    open(EngineUrl.createProcessUrl(PAYMENTLINK));
     $(By.id("form:price")).sendKeys("price_1QeSG6LaeAomYD3LfEHlcjEr");
     $(By.id("form:quantity_input")).sendKeys("2");
     $(By.id("form:createPaymentLink")).click();

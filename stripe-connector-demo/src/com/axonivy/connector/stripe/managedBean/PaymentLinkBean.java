@@ -13,8 +13,8 @@ public class PaymentLinkBean {
   private String result;
   private boolean disableForm;
 
-  public void onSendRequestViaOpenApi() throws StripeException {
-    result = PaymentService.getInstance().getPaymentLinkViaOpenApi(priceId, quantity);
+  public void onSendRequest() throws StripeException {
+    result = PaymentService.getInstance().getPaymentLink(priceId, quantity);
     this.disableForm = true;
   }
 
