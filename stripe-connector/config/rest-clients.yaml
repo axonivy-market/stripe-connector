@@ -5,7 +5,7 @@ RestClients:
     UUID: ef99b422-1c59-4c30-8e9c-4f528cb1e117
     Url: https://api.stripe.com/
     Features:
-    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.connector.stripe.deserializers.StripeDataJsonFeature
     OpenAPI:
       SpecUrl: file:///D:/work/Project/MARKET/stripe-connector/stripe-connector-product/openapi.json
       Namespace: com.stripe.api.client

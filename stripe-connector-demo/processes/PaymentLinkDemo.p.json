@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
-  "id" : "1943F079FC4B1728",
+  "id" : "194ED891756337A7",
   "config" : {
     "data" : "com.axonivy.connector.stripe.PaymentLinkDemoData"
   },
@@ -12,7 +12,7 @@
         "signature" : "start"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 64 }
+        "at" : { "x" : 176, "y" : 64 }
       },
       "connect" : [
         { "id" : "f2", "to" : "f3" }
@@ -21,17 +21,19 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 352, "y" : 64 },
+        "at" : { "x" : 528, "y" : 64 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
     }, {
       "id" : "f3",
       "type" : "DialogCall",
+      "name" : "Show paymentLink form",
       "config" : {
         "dialog" : "com.axonivy.connector.stripe.CreatePaymentLinkDemo:start()"
       },
       "visual" : {
-        "at" : { "x" : 224, "y" : 64 }
+        "at" : { "x" : 360, "y" : 64 },
+        "size" : { "width" : 136, "height" : 62 }
       },
       "connect" : [
         { "id" : "f4", "to" : "f1", "color" : "default" }

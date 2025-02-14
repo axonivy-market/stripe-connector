@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
-  "id" : "1943F0A2947B958B",
+  "id" : "194ED8AF1889F3F3",
   "kind" : "HTML_DIALOG",
   "config" : {
     "data" : "com.axonivy.connector.stripe.CreatePaymentLinkDemo.CreatePaymentLinkDemoData"
@@ -11,7 +11,7 @@
       "name" : "start()",
       "config" : {
         "signature" : "start",
-        "guid" : "1943F0A2948550F4"
+        "guid" : "194ED8AF188B8C84"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
@@ -31,7 +31,7 @@
       "type" : "HtmlDialogEventStart",
       "name" : "close",
       "config" : {
-        "guid" : "1943F0A294AF6120"
+        "guid" : "194ED8AF18A8E0C6"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 160 }

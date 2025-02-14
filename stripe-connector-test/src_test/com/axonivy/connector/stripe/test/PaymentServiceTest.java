@@ -23,6 +23,11 @@ import static com.codeborne.selenide.Condition.visible;
 @IvyProcessTest
 public class PaymentServiceTest {
 
+  private static final String CHECKOUT_SESSION = "/stripe-connector-demo/194EE3B279B2B3BD/start.ivp";
+  private static final String PAYMENTLINK = "/stripe-connector-demo/194ED891756337A7/start.ivp";
+  private static final String LOG_IN =
+      "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
+
   @BeforeEach
   public static void setup(AppFixture appFixture) {
     StripeUtils.setUpConfigForApiTest(appFixture);
@@ -33,12 +38,11 @@ public class PaymentServiceTest {
     Configuration.browser = "chrome";
   }
 
+
   @TestTemplate
   void testCreateCheckoutSession() {
-    open(EngineUrl.createProcessUrl(
-        "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer"));
-    open(EngineUrl.createProcessUrl("/stripe-connector-demo/1943FFA7A8AA30F4/start.ivp"));
-
+    open(EngineUrl.createProcessUrl(LOG_IN));
+    open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
     $(By.id("form:price")).sendKeys("price_1QeSG6LaeAomYD3LfEHlcjEr");
     $(By.id("form:quantity_input")).sendKeys("2");
     $(By.id("form:resquest-button")).click();
@@ -63,7 +67,7 @@ public class PaymentServiceTest {
 
   @TestTemplate
   void testCreatePaymentLink() {
-    open(EngineUrl.createProcessUrl("/stripe-connector-demo/1943F079FC4B1728/start.ivp"));
+    open(EngineUrl.createProcessUrl(PAYMENTLINK));
     $(By.id("form:price")).sendKeys("price_1QeSG6LaeAomYD3LfEHlcjEr");
     $(By.id("form:quantity_input")).sendKeys("2");
     $(By.id("form:createPaymentLink")).click();

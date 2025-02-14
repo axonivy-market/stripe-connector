@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
-  "id" : "1944004A3A487F8E",
+  "id" : "194EE3C31D890D0F",
   "kind" : "HTML_DIALOG",
   "config" : {
     "data" : "com.axonivy.connector.stripe.CreateCheckoutSessionDemo.CreateCheckoutSessionDemoData"
