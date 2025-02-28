@@ -1,7 +1,7 @@
-# MY-PRODUCT-NAME
+# Stripe Connector
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+[![CI Build](https://github.com/axonivy-market/stripe-connector/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/stripe-connector/actions/workflows/ci.yml)
 
-"YOUR SHORT DESCRIPTION GOES HERE"
+Stripe is a comprehensive payment processing platform that enables businesses to accept payments online and in-person.
 
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](stripe-connector-product/README.md).
