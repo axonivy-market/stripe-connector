@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Condition.visible;
 
 @ExtendWith(MultiEnvironmentContextProvider.class)
-@IvyProcessTest
+@IvyProcessTest(enableWebServer = true)
 public class PaymentServiceTest {
 
   private static final String CHECKOUT_SESSION = "/stripe-connector-demo/194EE3B279B2B3BD/start.ivp";
