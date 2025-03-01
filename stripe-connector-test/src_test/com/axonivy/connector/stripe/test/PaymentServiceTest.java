@@ -10,10 +10,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import com.axonivy.connector.stripe.test.context.MultiEnvironmentContextProvider;
 import com.axonivy.connector.stripe.test.utils.StripeUtils;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
+import com.axonivy.ivy.webtest.engine.WebAppFixture;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
-import ch.ivyteam.ivy.environment.AppFixture;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -29,7 +29,7 @@ public class PaymentServiceTest {
       "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
   @BeforeEach
-  void setup(AppFixture appFixture) {
+  void setup(WebAppFixture appFixture) {
     StripeUtils.setUpConfigForApiTest(appFixture);
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless"); // Run in headless mode (no GUI)
