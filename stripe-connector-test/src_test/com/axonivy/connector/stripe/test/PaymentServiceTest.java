@@ -1,6 +1,8 @@
 package com.axonivy.connector.stripe.test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,8 +30,8 @@ public class PaymentServiceTest {
   private static final String LOG_IN =
       "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
-  @BeforeEach
-  void setup(AppFixture appFixture) {
+  @BeforeAll
+  static void setup(AppFixture appFixture) {
     StripeUtils.setUpConfigForApiTest(appFixture);
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless"); // Run in headless mode (no GUI)
