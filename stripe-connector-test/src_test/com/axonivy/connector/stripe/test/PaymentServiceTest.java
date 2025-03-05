@@ -1,23 +1,33 @@
 package com.axonivy.connector.stripe.test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.time.Duration;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.axonivy.connector.stripe.test.context.MultiEnvironmentContextProvider;
 import com.axonivy.connector.stripe.test.utils.StripeUtils;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
+
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.environment.AppFixture;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.enabled;
 
 @ExtendWith(MultiEnvironmentContextProvider.class)
 @IvyProcessTest
@@ -41,23 +51,30 @@ public class PaymentServiceTest {
 
   @TestTemplate
   void testCreateCheckoutSession() {
-    open(EngineUrl.createProcessUrl(LOG_IN));
-    open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
-    $(By.id("form:price")).sendKeys("price_1QeSG6LaeAomYD3LfEHlcjEr");
-    $(By.id("form:quantity_input")).sendKeys("2");
-    $(By.id("form:resquest-button")).click();
-    Selenide.sleep(5000);
-    Selenide.switchTo().frame($(By.tagName("iframe")));
-    clickAndInputValue("email", "Octopus@gmail.com");
-    clickAndInputValue("cardNumber", "4242424242424242");
-    clickAndInputValue("cardExpiry", "04/31");
-    clickAndInputValue("cardCvc", "115");
-    clickAndInputValue("billingName", "test");
-    $("#billingCountry").selectOption("Vietnam");
-    $(By.className("SubmitButton")).click();
-    Selenide.sleep(5000);
-    Selenide.switchTo().alert().accept();
-    $(By.className("PaymentSuccess")).shouldBe(visible);
+	  open(EngineUrl.createProcessUrl(LOG_IN));
+	  open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
+
+	  $(By.id("form:price")).sendKeys("price_1QeSG6LaeAomYD3LfEHlcjEr");
+	  $(By.id("form:quantity_input")).sendKeys("2");
+	  $(By.id("form:resquest-button")).click();
+
+	  SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(10));
+      Selenide.switchTo().frame(iframe);
+
+	  clickAndInputValue("email", "Octopus@gmail.com");
+	  clickAndInputValue("cardNumber", "4242424242424242");
+	  clickAndInputValue("cardExpiry", "04/31");
+	  clickAndInputValue("cardCvc", "115");
+	  clickAndInputValue("billingName", "test");
+
+	  $("#billingCountry").shouldBe(visible).selectOption("Vietnam");
+	  $(By.className("SubmitButton")).shouldBe(enabled).click();
+	  
+	  WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(10));
+	  Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+	  alert.accept();
+	  
+	  $(By.className("PaymentSuccess")).shouldBe(visible);
   }
 
   private void clickAndInputValue(String id, String value) {
