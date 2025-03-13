@@ -18,7 +18,12 @@
           "map" : {
             "out.priceId" : "param.priceId",
             "out.quantity" : "param.quantity"
-          }
+          },
+          "code" : [
+            "import com.axonivy.connector.stripe.test.utils.StripeUtils;",
+            "ivy.var.set(\"stripe.auth.secretKey\", StripeUtils.getSecret());",
+            "ivy.var.set(\"stripe.auth.publishableKey\", StripeUtils.getPublic());"
+          ]
         },
         "request" : {
           "isVisibleOnStartList" : false

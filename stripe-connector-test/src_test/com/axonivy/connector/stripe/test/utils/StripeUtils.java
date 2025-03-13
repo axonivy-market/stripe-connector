@@ -1,13 +1,12 @@
 package com.axonivy.connector.stripe.test.utils;
 
-import ch.ivyteam.ivy.environment.AppFixture;
-
 public class StripeUtils {
 
-  public static void setUpConfigForApiTest(AppFixture fixture) {
-    String secretKey = System.getProperty("secretKey");
-    String publishableKey = System.getProperty("publishableKey");
-    fixture.var("stripe.auth.secretKey", secretKey);
-    fixture.var("stripe.auth.publishableKey", publishableKey);
-  }
+	public static String getSecret() {
+		return System.getProperty("secretKey");
+	}
+	
+	public static String getPublic() {
+		return System.getProperty("publishableKey");
+	}
 }
