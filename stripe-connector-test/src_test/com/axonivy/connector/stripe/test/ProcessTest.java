@@ -47,7 +47,7 @@ public class ProcessTest {
 	}
 	
 	@AfterAll
-	public void cleanup() {
+	public static void cleanup() {
 		Ivy.var().reset("stripe.auth.secretKey");
 		Ivy.var().reset("stripe.auth.publishableKey");
 	}
