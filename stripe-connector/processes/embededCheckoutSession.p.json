@@ -138,8 +138,7 @@
             "",
             "Price price = service.retrievePrice(in.priceId);",
             "",
-            "in.paymentMode = service.getPaymentMode(price).getValue();",
-            "ivy.log.info(\"message --- {0}\", ivy.var.stripe_auth_secretKey);"
+            "in.paymentMode = service.getPaymentMode(price).getValue();"
           ]
         }
       },

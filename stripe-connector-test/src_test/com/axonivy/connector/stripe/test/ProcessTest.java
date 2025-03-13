@@ -42,6 +42,9 @@ public class ProcessTest {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless"); // Run in headless mode (no GUI)
 		options.addArguments("--disable-web-security"); // Disable web security (for cross-origin tests)
+		Configuration.reportsFolder = null; // Disables saving reports
+		Configuration.savePageSource = false; // Disables saving page source
+		Configuration.screenshots = false;
 		Configuration.browserCapabilities = options;
 		Configuration.browser = "chrome";
 	}
