@@ -18,7 +18,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.axonivy.connector.stripe.test.context.MultiEnvironmentContextProvider;
-import com.axonivy.connector.stripe.test.utils.StripeUtils;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -26,7 +25,6 @@ import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
-import ch.ivyteam.ivy.environment.AppFixture;
 import ch.ivyteam.ivy.environment.Ivy;
 
 @ExtendWith(MultiEnvironmentContextProvider.class)

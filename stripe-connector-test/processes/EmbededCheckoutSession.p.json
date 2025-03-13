@@ -2,7 +2,7 @@
   "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "19565E5AC96A55B3",
   "config" : {
-    "data" : "com.axonivy.connector.stripe.EmbededCheckoutSessionData"
+    "data" : "com.axonivy.connector.stripe.test.EmbededCheckoutSessionData"
   },
   "elements" : [ {
       "id" : "f0",
@@ -20,9 +20,10 @@
             "out.quantity" : "param.quantity"
           },
           "code" : [
-            "import com.axonivy.connector.stripe.test.utils.StripeUtils;",
-            "ivy.var.set(\"stripe.auth.secretKey\", StripeUtils.getSecret());",
-            "ivy.var.set(\"stripe.auth.publishableKey\", StripeUtils.getPublic());"
+            "import com.axonivy.connector.stripe.test.utils.StripeUtil;",
+            "",
+            "ivy.var.set(\"stripe.auth.secretKey\", StripeUtil.getSecret());",
+            "ivy.var.set(\"stripe.auth.publishableKey\", StripeUtil.getPublic());"
           ]
         },
         "request" : {
