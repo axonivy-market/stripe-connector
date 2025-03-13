@@ -48,12 +48,6 @@
 			<version>${tester.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.axonivy.connector.stripe</groupId>
-			<artifactId>stripe-connector-demo</artifactId>
-			<version>${project.version}</version>
-			<type>iar</type>
-		</dependency>
 	</dependencies>
 	<build>
 		<testSourceDirectory>src_test</testSourceDirectory>
