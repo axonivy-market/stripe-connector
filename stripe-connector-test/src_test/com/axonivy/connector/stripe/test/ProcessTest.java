@@ -38,10 +38,10 @@ public class ProcessTest {
 	@BeforeEach
 	public void setup() {
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless"); // Run in headless mode (no GUI)
-		options.addArguments("--disable-web-security"); // Disable web security (for cross-origin tests)
-		Configuration.reportsFolder = null; // Disables saving reports
-		Configuration.savePageSource = false; // Disables saving page source
+		options.addArguments("--headless");
+		options.addArguments("--disable-web-security");
+		Configuration.reportsFolder = null;
+		Configuration.savePageSource = false;
 		Configuration.screenshots = false;
 		Configuration.browserCapabilities = options;
 		Configuration.browser = "chrome";
@@ -51,15 +51,18 @@ public class ProcessTest {
 	public static void cleanup() {
 		Ivy.var().reset("stripe.auth.secretKey");
 		Ivy.var().reset("stripe.auth.publishableKey");
+		Selenide.closeWebDriver();
 	}
 
 	@TestTemplate
 	void testCreateCheckoutSession() {		
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
+		System.out.println("#getSecret --- " + System.getProperty("secretKey"));
+		System.out.println("#getPublic --- " + System.getProperty("publishableKey"));
 		$(By.id("form:resquest-button")).shouldBe(enabled).click();
 
-		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
+		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(30));
 		Selenide.switchTo().frame(iframe);
 
 		clickAndInputValue("email", "Octopus@gmail.com");
@@ -71,7 +74,7 @@ public class ProcessTest {
 		$("#billingCountry").shouldBe(visible).selectOption("Vietnam");
 		$(By.className("SubmitButton")).shouldBe(enabled).click();
 
-		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
+		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(30));
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		alert.accept();
 
