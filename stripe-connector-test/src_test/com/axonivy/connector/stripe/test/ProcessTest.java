@@ -50,9 +50,9 @@ public class ProcessTest {
 	
 	@AfterAll
 	public static void cleanup() {
-		Ivy.var().reset("stripe.auth.secretKey");
-		Ivy.var().reset("stripe.auth.publishableKey");
-		Selenide.closeWebDriver();
+//		Ivy.var().reset("stripe.auth.secretKey");
+//		Ivy.var().reset("stripe.auth.publishableKey");
+//		Selenide.closeWebDriver();
 	}
 
 	@TestTemplate
