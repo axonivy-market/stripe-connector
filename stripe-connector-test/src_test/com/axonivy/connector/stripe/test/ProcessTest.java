@@ -32,7 +32,7 @@ import ch.ivyteam.ivy.environment.Ivy;
 @IvyProcessTest(enableWebServer = true)
 public class ProcessTest {
 
-	private static final String CHECKOUT_SESSION = "/stripe-connector-test/19565E5AC96A55B3/start.ivp?priceId=price_1QeSG6LaeAomYD3LfEHlcjEr&quantity=2&secret=%s&publicKey=%s";
+	private static final String CHECKOUT_SESSION = "/stripe-connector-test/19565E5AC96A55B3/start.ivp?priceId=price_1QeSG6LaeAomYD3LfEHlcjEr&quantity=2";
 
 	private static final String LOG_IN = "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
@@ -47,7 +47,7 @@ public class ProcessTest {
 		Configuration.browserCapabilities = options;
 		Configuration.browser = "chrome";
 	}
-
+	
 	@AfterAll
 	public static void cleanup() {
 		Ivy.var().reset("stripe.auth.secretKey");
@@ -56,10 +56,9 @@ public class ProcessTest {
 	}
 
 	@TestTemplate
-	public void testCreateCheckoutSession() {
-		String testPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
+	public void testCreateCheckoutSession() {		
 		open(EngineUrl.createProcessUrl(LOG_IN));
-		open(EngineUrl.createProcessUrl(testPath));
+		open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
 		System.out.println("#getSecret --- " + System.getProperty("secretKey"));
 		System.out.println("#getPublic --- " + System.getProperty("publishableKey"));
 		$(By.id("form:resquest-button")).shouldBe(enabled).click();

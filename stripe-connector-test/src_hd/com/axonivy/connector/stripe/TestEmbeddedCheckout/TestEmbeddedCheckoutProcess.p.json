@@ -8,23 +8,18 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "HtmlDialogStart",
-      "name" : "start(String,Number,String,String)",
+      "name" : "start(String,Number)",
       "config" : {
         "signature" : "start",
         "input" : {
           "params" : [
             { "name" : "priceId", "type" : "String", "desc" : "" },
-            { "name" : "quantity", "type" : "Number", "desc" : "" },
-            { "name" : "secret", "type" : "String", "desc" : "" },
-            { "name" : "publicKey", "type" : "String", "desc" : "" }
+            { "name" : "quantity", "type" : "Number", "desc" : "" }
           ],
           "map" : { },
           "code" : [
             "out.priceId = param.priceId;",
-            "out.quantity = param.quantity;",
-            "",
-            "ivy.var.set(\"stripe.auth.secretKey\", param.secret);",
-            "ivy.var.set(\"stripe.auth.publishableKey\", param.publicKey);"
+            "out.quantity = param.quantity;"
           ]
         },
         "guid" : "19565C5EF7BEBDE5"

@@ -47,13 +47,11 @@
       "id" : "f3",
       "type" : "DialogCall",
       "config" : {
-        "dialog" : "com.axonivy.connector.stripe.TestEmbeddedCheckout:start(String,Number,String,String)",
+        "dialog" : "com.axonivy.connector.stripe.TestEmbeddedCheckout:start(String,Number)",
         "call" : {
           "map" : {
             "param.priceId" : "in.priceId",
-            "param.quantity" : "in.quantity",
-            "param.secret" : "in.secret",
-            "param.publicKey" : "in.publicKey"
+            "param.quantity" : "in.quantity"
           }
         }
       },
