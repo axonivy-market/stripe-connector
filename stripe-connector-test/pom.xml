@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.axonivy.connector.stripe</groupId>
 	<artifactId>stripe-connector-test</artifactId>
@@ -10,8 +12,6 @@
 		<tester.version>12.0.0</tester.version>
 		<project.build.plugin.version>12.0.0</project.build.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<secretKey>${stripe.secretKey}</secretKey>
-		<publishableKey>${stripe.publishableKey}</publishableKey>
 	</properties>
 	<pluginRepositories>
 		<pluginRepository>
@@ -73,6 +73,10 @@
 						-Dtest.engine.url=${test.engine.url}
 						-Dtest.engine.app=stripeconnectortest
 					</argLine>
+					<systemPropertyVariables>
+						<secretKey>${stripe.secretKey}</secretKey>
+						<publishableKey>${stripe.publishableKey}</publishableKey>
+					</systemPropertyVariables>
 				</configuration>
 				<executions>
 					<execution>

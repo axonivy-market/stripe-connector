@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 import java.time.Duration;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,8 +36,8 @@ public class ProcessTest {
 
 	private static final String LOG_IN = "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
-	@BeforeEach
-	public void setup() {
+	@BeforeAll
+	public static void setup() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
 		options.addArguments("--disable-web-security");
@@ -55,7 +56,7 @@ public class ProcessTest {
 	}
 
 	@TestTemplate
-	void testCreateCheckoutSession() {		
+	public void testCreateCheckoutSession() {		
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
 		System.out.println("#getSecret --- " + System.getProperty("secretKey"));
