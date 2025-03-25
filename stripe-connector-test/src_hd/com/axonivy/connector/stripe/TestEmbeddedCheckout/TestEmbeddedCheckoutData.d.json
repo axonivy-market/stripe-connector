@@ -9,5 +9,11 @@
   }, {
     "name" : "quantity",
     "type" : "Number"
+  }, {
+    "name" : "secret",
+    "type" : "String"
+  }, {
+    "name" : "publicKey",
+    "type" : "String"
   } ]
 }
