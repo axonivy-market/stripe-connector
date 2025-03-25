@@ -73,10 +73,6 @@
 						-Dtest.engine.url=${test.engine.url}
 						-Dtest.engine.app=stripeconnectortest
 					</argLine>
-					<argLine>
-						-Dstripe.secretKey=${stripe.secretKey}
-						-Dstripe.publishableKey=${stripe.publishableKey}
-					</argLine>
 				</configuration>
 				<executions>
 					<execution>
