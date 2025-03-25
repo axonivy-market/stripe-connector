@@ -10,6 +10,8 @@
 		<tester.version>12.0.0</tester.version>
 		<project.build.plugin.version>12.0.0</project.build.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<secretKey>${stripe.secretKey}</secretKey>
+		<publishableKey>${stripe.publishableKey}</publishableKey>
 	</properties>
 	<pluginRepositories>
 		<pluginRepository>
@@ -71,10 +73,10 @@
 						-Dtest.engine.url=${test.engine.url}
 						-Dtest.engine.app=stripeconnectortest
 					</argLine>
-					<systemPropertyVariables>
-						<secretKey>${stripe.secretKey}</secretKey>
-						<publishableKey>${stripe.publishableKey}</publishableKey>
-					</systemPropertyVariables>
+					<argLine>
+						-Dstripe.secretKey=${stripe.secretKey}
+						-Dstripe.publishableKey=${stripe.publishableKey}
+					</argLine>
 				</configuration>
 				<executions>
 					<execution>
