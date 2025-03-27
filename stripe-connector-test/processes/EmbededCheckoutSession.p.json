@@ -13,7 +13,9 @@
         "input" : {
           "params" : [
             { "name" : "priceId", "type" : "String", "desc" : "" },
-            { "name" : "quantity", "type" : "Number", "desc" : "" }
+            { "name" : "quantity", "type" : "Number", "desc" : "" },
+            { "name" : "secret", "type" : "String", "desc" : "" },
+            { "name" : "publicKey", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.priceId" : "param.priceId",
@@ -22,8 +24,8 @@
           "code" : [
             "import com.axonivy.connector.stripe.test.utils.StripeUtil;",
             "",
-            "ivy.var.set(\"stripe.auth.secretKey\", StripeUtil.getSecret());",
-            "ivy.var.set(\"stripe.auth.publishableKey\", StripeUtil.getPublic());"
+            "ivy.var.set(\"stripe.auth.secretKey\", param.secret);",
+            "ivy.var.set(\"stripe.auth.publishableKey\", param.publicKey);"
           ]
         },
         "request" : {

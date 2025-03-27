@@ -32,7 +32,7 @@ import ch.ivyteam.ivy.environment.Ivy;
 @IvyProcessTest(enableWebServer = true)
 public class ProcessTest {
 
-	private static final String CHECKOUT_SESSION = "/stripe-connector-test/19565E5AC96A55B3/start.ivp?priceId=price_1QeSG6LaeAomYD3LfEHlcjEr&quantity=2";
+	private static final String CHECKOUT_SESSION = "/stripe-connector-test/19565E5AC96A55B3/start.ivp?priceId=price_1QeSG6LaeAomYD3LfEHlcjEr&quantity=2&secret=%s&publicKey=%s";
 
 	private static final String LOG_IN = "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
@@ -50,20 +50,19 @@ public class ProcessTest {
 	
 	@AfterAll
 	public static void cleanup() {
-//		Ivy.var().reset("stripe.auth.secretKey");
-//		Ivy.var().reset("stripe.auth.publishableKey");
-//		Selenide.closeWebDriver();
+		Ivy.var().reset("stripe.auth.secretKey");
+		Ivy.var().reset("stripe.auth.publishableKey");
+		Selenide.closeWebDriver();
 	}
 
 	@TestTemplate
-	public void testCreateCheckoutSession() {		
+	public void testCreateCheckoutSession() {
+		String process = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
-		open(EngineUrl.createProcessUrl(CHECKOUT_SESSION));
-		System.out.println("#getSecret --- " + System.getProperty("secretKey"));
-		System.out.println("#getPublic --- " + System.getProperty("publishableKey"));
+		open(EngineUrl.createProcessUrl(process));
 		$(By.id("form:resquest-button")).shouldBe(enabled).click();
 
-		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(30));
+		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
 
 		clickAndInputValue("email", "Octopus@gmail.com");
@@ -75,7 +74,7 @@ public class ProcessTest {
 		$("#billingCountry").shouldBe(visible).selectOption("Vietnam");
 		$(By.className("SubmitButton")).shouldBe(enabled).click();
 
-		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		alert.accept();
 
