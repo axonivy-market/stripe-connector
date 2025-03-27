@@ -22,8 +22,6 @@
             "out.quantity" : "param.quantity"
           },
           "code" : [
-            "import com.axonivy.connector.stripe.test.utils.StripeUtil;",
-            "",
             "ivy.var.set(\"stripe.auth.secretKey\", param.secret);",
             "ivy.var.set(\"stripe.auth.publishableKey\", param.publicKey);"
           ]
