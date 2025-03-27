@@ -52,14 +52,13 @@ public class ProcessTest {
 	public static void cleanup() {
 		Ivy.var().reset("stripe.auth.secretKey");
 		Ivy.var().reset("stripe.auth.publishableKey");
-//		Selenide.closeWebDriver();
 	}
 
 	@TestTemplate
 	public void testCreateCheckoutSession() {
-		String process = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
+		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
-		open(EngineUrl.createProcessUrl(process));
+		open(EngineUrl.createProcessUrl(processPath));
 		$(By.id("form:resquest-button")).shouldBe(enabled).click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
