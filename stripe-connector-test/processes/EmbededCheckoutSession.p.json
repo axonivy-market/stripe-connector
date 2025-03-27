@@ -1,0 +1,65 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
+  "id" : "19565E5AC96A55B3",
+  "config" : {
+    "data" : "com.axonivy.connector.stripe.test.EmbededCheckoutSessionData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "priceId", "type" : "String", "desc" : "" },
+            { "name" : "quantity", "type" : "Number", "desc" : "" },
+            { "name" : "secret", "type" : "String", "desc" : "" },
+            { "name" : "publicKey", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.priceId" : "param.priceId",
+            "out.quantity" : "param.quantity"
+          },
+          "code" : [
+            "ivy.var.set(\"stripe.auth.secretKey\", param.secret);",
+            "ivy.var.set(\"stripe.auth.publishableKey\", param.publicKey);"
+          ]
+        },
+        "request" : {
+          "isVisibleOnStartList" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "com.axonivy.connector.stripe.TestEmbeddedCheckout:start(String,Number)",
+        "call" : {
+          "map" : {
+            "param.priceId" : "in.priceId",
+            "param.quantity" : "in.quantity"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1", "color" : "default" }
+      ]
+    } ]
+}
