@@ -49,7 +49,8 @@ The **priceId** is a unique identifier for a price in Stripe. It is automaticall
 ![](images/add_product.png)
 4. Access the products to obtain the price ID of this product.
 ![](images/go_to_product_get_priceId.png)
-![](images/get_PriceId.png)
+  - You can copy the priceId from here 
+![](images/copy_priceId.png)
 5. Open the `Configuration/variables.yaml` in your Designer and set the secretKey and PublishableKey
 6. Save the changed settings and start a demo process
 
