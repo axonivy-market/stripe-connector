@@ -25,7 +25,7 @@ The **priceId** is a unique identifier for a price in Stripe. It is automaticall
 
 ## Demo
 
-### Use Case: Create a paymentLink based on priceId and quantity
+### Use Case: Create a paymentLink based on priceId (please follow installation guide to get the priceId) and quantity
 ![](images/create_paymentLink.png) 
 
 #### We can use this link to redirect to the Stripe payment website and make a payment.
