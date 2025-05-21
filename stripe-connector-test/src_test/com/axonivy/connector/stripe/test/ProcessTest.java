@@ -60,7 +60,7 @@ public class ProcessTest {
 		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
-		SelenideElement requestButton = $(By.id("form:request-button"))
+		SelenideElement requestButton = $(By.id("form:resquest-button"))
 				.shouldBe(Condition.visible, Duration.ofSeconds(10)).shouldBe(enabled);
 		requestButton.click();
 //		$(By.id("form:resquest-button")).shouldBe(enabled).click();
