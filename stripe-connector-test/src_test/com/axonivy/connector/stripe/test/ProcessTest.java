@@ -19,7 +19,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.axonivy.connector.stripe.test.context.MultiEnvironmentContextProvider;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -56,13 +55,10 @@ public class ProcessTest {
 
 	@TestTemplate
 	public void testCreateCheckoutSession() {
-		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"),
-				System.getProperty("publishableKey"));
+		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
 		$(By.id("form:resquest-button")).shouldBe(enabled).click();
-		$(By.cssSelector("[id$='resquest-button']")).should(Condition.appear, Duration.ofSeconds(20)).shouldBe(enabled)
-				.click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
