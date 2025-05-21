@@ -63,12 +63,14 @@ public class ProcessTest {
 //		SelenideElement requestButton = $(By.id("form:resquest-button"))
 //				.shouldBe(Condition.visible, Duration.ofSeconds(20)).shouldBe(enabled);
 //		requestButton.click();
-//		$(By.id("form:resquest-button")).shouldBe(enabled).click();
-		$(By.id("form:resquest-button"))
-		  .should(Condition.exist, Duration.ofSeconds(20))
-		  .shouldBe(Condition.visible)
-		  .shouldBe(Condition.enabled)
-		  .click();
+
+		WebDriverWait wait1 = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(20));
+		$(By.id("form:resquest-button")).shouldBe(enabled).click();
+//		$(By.id("form:resquest-button"))
+//		  .should(Condition.exist, Duration.ofSeconds(20))
+//		  .shouldBe(Condition.visible)
+//		  .shouldBe(Condition.enabled)
+//		  .click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
@@ -82,7 +84,7 @@ public class ProcessTest {
 		$("#billingCountry").shouldBe(visible).selectOption("Vietnam");
 		$(By.className("SubmitButton")).shouldBe(enabled).click();
 
-		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
+		WebDriverWait wait2 = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		alert.accept();
 
