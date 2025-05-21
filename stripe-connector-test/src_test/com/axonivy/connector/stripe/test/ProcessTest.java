@@ -9,7 +9,6 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.Alert;
@@ -59,12 +58,11 @@ public class ProcessTest {
 		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
-		$("#form:resquest-button").shouldBe(visible, Duration.ofSeconds(10)).shouldBe(enabled).click();
+		$(By.id("form:resquest-button")).shouldBe(enabled).click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
 
-//		$(By.id("form:resquest-button")).shouldBe(enabled).click();
 		clickAndInputValue("email", "Octopus@gmail.com");
 		clickAndInputValue("cardNumber", "4242424242424242");
 		clickAndInputValue("cardExpiry", "04/31");
