@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.axonivy.connector.stripe.test.context.MultiEnvironmentContextProvider;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -47,7 +48,7 @@ public class ProcessTest {
 		Configuration.browserCapabilities = options;
 		Configuration.browser = "chrome";
 	}
-	
+
 	@AfterAll
 	public static void cleanup() {
 		Ivy.var().reset("stripe.auth.secretKey");
@@ -59,7 +60,10 @@ public class ProcessTest {
 		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
-		$(By.id("form:resquest-button")).shouldBe(enabled).click();
+		SelenideElement requestButton = $(By.id("form:request-button"))
+				.shouldBe(Condition.visible, Duration.ofSeconds(10)).shouldBe(enabled);
+		requestButton.click();
+//		$(By.id("form:resquest-button")).shouldBe(enabled).click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
