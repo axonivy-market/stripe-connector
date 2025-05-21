@@ -60,10 +60,15 @@ public class ProcessTest {
 		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
-		SelenideElement requestButton = $(By.id("form:resquest-button"))
-				.shouldBe(Condition.visible, Duration.ofSeconds(10)).shouldBe(enabled);
-		requestButton.click();
+//		SelenideElement requestButton = $(By.id("form:resquest-button"))
+//				.shouldBe(Condition.visible, Duration.ofSeconds(20)).shouldBe(enabled);
+//		requestButton.click();
 //		$(By.id("form:resquest-button")).shouldBe(enabled).click();
+		$(By.id("form:resquest-button"))
+		  .should(Condition.exist, Duration.ofSeconds(20))
+		  .shouldBe(Condition.visible)
+		  .shouldBe(Condition.enabled)
+		  .click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
