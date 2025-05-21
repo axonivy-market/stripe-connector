@@ -14,7 +14,9 @@ import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -58,16 +60,20 @@ public class ProcessTest {
 
 	@TestTemplate
 	public void testCreateCheckoutSession() {
-		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
+		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"),
+				System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		$(By.id("form:resquest-button")).shouldBe(enabled).click();
 //		SelenideElement requestButton = $(By.id("form:resquest-button"))
 //				.shouldBe(Condition.visible, Duration.ofSeconds(20)).shouldBe(enabled);
 //		requestButton.click();
 
-		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(20));
-		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("form:resquest-button")));
-		element.click();
+//		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(20));
+//		WebElement element = wait.until(ExpectedConditions.e(By.id("form:resquest-button")));
+//		element.click();
 
 //		WebDriverWait wait1 = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(20));
 //		$(By.id("form:resquest-button")).shouldBe(enabled).click();
