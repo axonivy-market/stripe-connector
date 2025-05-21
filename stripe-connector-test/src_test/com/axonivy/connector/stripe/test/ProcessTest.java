@@ -14,16 +14,12 @@ import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.axonivy.connector.stripe.test.context.MultiEnvironmentContextProvider;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -51,7 +47,7 @@ public class ProcessTest {
 		Configuration.browserCapabilities = options;
 		Configuration.browser = "chrome";
 	}
-
+	
 	@AfterAll
 	public static void cleanup() {
 		Ivy.var().reset("stripe.auth.secretKey");
@@ -60,28 +56,10 @@ public class ProcessTest {
 
 	@TestTemplate
 	public void testCreateCheckoutSession() {
-		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"),
-				System.getProperty("publishableKey"));
+		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		$(By.id("form:resquest-button")).shouldBe(enabled).click();
-//		SelenideElement requestButton = $(By.id("form:resquest-button"))
-//				.shouldBe(Condition.visible, Duration.ofSeconds(20)).shouldBe(enabled);
-//		requestButton.click();
-
-//		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(20));
-//		WebElement element = wait.until(ExpectedConditions.e(By.id("form:resquest-button")));
-//		element.click();
-
-//		WebDriverWait wait1 = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(20));
-//		$(By.id("form:resquest-button")).shouldBe(enabled).click();
-//		$(By.id("form:resquest-button"))
-//		  .should(Condition.exist, Duration.ofSeconds(20))
-//		  .shouldBe(Condition.visible)
-//		  .shouldBe(Condition.enabled)
-//		  .click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
@@ -95,8 +73,8 @@ public class ProcessTest {
 		$("#billingCountry").shouldBe(visible).selectOption("Vietnam");
 		$(By.className("SubmitButton")).shouldBe(enabled).click();
 
-		WebDriverWait wait2 = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
-		Alert alert = wait2.until(ExpectedConditions.alertIsPresent());
+		WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
+		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		alert.accept();
 
 		$(By.className("PaymentSuccess")).shouldBe(visible);
