@@ -57,7 +57,7 @@
           },
           "headers" : {
             "Accept" : "application/x-www-form-urlencoded",
-            "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
+            "Authorization" : "\"bearer \" + ivy.var.get(\"stripe.auth.secretKey\")"
           },
           "properties" : {
             "" : ""
