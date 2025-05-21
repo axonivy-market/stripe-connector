@@ -59,7 +59,7 @@ public class ProcessTest {
 		String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
 		open(EngineUrl.createProcessUrl(LOG_IN));
 		open(EngineUrl.createProcessUrl(processPath));
-		$(By.id("form:resquest-button")).shouldBe(visible, Duration.ofSeconds(10)).shouldBe(enabled).click();
+		$("#form:resquest-button").shouldBe(visible, Duration.ofSeconds(10)).shouldBe(enabled).click();
 
 		SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
 		Selenide.switchTo().frame(iframe);
