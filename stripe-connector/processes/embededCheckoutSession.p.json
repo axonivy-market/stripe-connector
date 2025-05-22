@@ -53,7 +53,7 @@
           "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
           "path" : "/v1/checkout/sessions",
           "headers" : {
-            "Authorization" : "\"bearer \" + ivy.var.get(\"stripe.auth.secretKey\")"
+            "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
           }
         },
         "body" : {
