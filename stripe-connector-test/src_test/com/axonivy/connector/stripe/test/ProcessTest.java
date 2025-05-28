@@ -9,7 +9,6 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.Alert;
@@ -47,7 +46,7 @@ public class ProcessTest {
 		Configuration.browserCapabilities = options;
 		Configuration.browser = "chrome";
 	}
-	
+
 	@AfterAll
 	public static void cleanup() {
 		Ivy.var().reset("stripe.auth.secretKey");
