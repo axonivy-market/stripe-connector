@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.axonivy.connector.stripe</groupId>
   <artifactId>stripe-connector-test</artifactId>
-  <version>13.1.0</version>
+  <version>13.1.1-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
   <properties>
     <ivy.engine.version>13.1.0</ivy.engine.version>
