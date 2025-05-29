@@ -15,7 +15,7 @@
   <properties>
     <ivy.engine.version>13.1.0</ivy.engine.version>
     <tester.version>13.1.0</tester.version>
-    <project.build.plugin.version>13.1.1</project.build.plugin.version>
+    <project.build.plugin.version>13.1.0</project.build.plugin.version>
   </properties>
   <dependencies>
     <dependency>
