@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/rest-clients.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/13.1.0/rest-clients.json
 RestClients:
   #The Stripe REST API. Please see https://stripe.com/docs/api for more details.
   Stripe (Stripe API):
@@ -6,6 +6,7 @@ RestClients:
     Url: https://api.stripe.com/
     Features:
     - com.axonivy.connector.stripe.deserializers.StripeDataJsonFeature
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     OpenAPI:
       SpecUrl: file:///D:/work/Project/MARKET/stripe-connector/stripe-connector-product/openapi.json
       Namespace: com.stripe.api.client
