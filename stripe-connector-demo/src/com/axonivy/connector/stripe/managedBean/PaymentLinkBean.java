@@ -109,7 +109,6 @@ public class PaymentLinkBean {
     this.disableForm = disableForm;
   }
 
-  // Getters and setters for new fields
   public String getPaymentLinkId() {
     return paymentLinkId;
   }
