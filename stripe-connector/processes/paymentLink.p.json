@@ -104,10 +104,8 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.stripe.api.client.PaymentLink",
-            "map" : {
-              "out.result" : "result.url"
-            }
+            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "code" : "out.result = result.get(\"url\").asText();"
           }
         }
       },
