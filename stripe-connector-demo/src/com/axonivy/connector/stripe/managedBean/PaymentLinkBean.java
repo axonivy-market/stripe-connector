@@ -1,10 +1,12 @@
 package com.axonivy.connector.stripe.managedBean;
 
-import com.axonivy.connector.stripe.service.PaymentService;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.stripe.exception.StripeException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+
+import com.axonivy.connector.stripe.service.PaymentService;
+import com.stripe.api.client.PaymentLink;
+import com.stripe.api.client.PaymentLinksResourceListLineItems;
+import com.stripe.exception.StripeException;
 
 @ManagedBean
 @ViewScoped
@@ -26,23 +28,53 @@ public class PaymentLinkBean {
   }
 
   public void onCreatePaymentLink() throws StripeException {
-    JsonNode jsonResult = PaymentService.getInstance().createPaymentLink(priceId, quantity);
-    createResult = jsonResult != null ? jsonResult.toPrettyString() : "No result";
+    PaymentLink paymentLinkResult = PaymentService.getInstance().createPaymentLink(priceId, quantity);
+    createResult = paymentLinkResult != null ? formatPaymentLinkResult(paymentLinkResult) : "No result";
   }
 
   public void onRetrievePaymentLink() throws StripeException {
-    JsonNode jsonResult = PaymentService.getInstance().retrievePaymentLink(paymentLinkId);
-    retrieveResult = jsonResult != null ? jsonResult.toPrettyString() : "No result";
+    PaymentLink paymentLinkResult = PaymentService.getInstance().retrievePaymentLink(paymentLinkId);
+    retrieveResult = paymentLinkResult != null ? formatPaymentLinkResult(paymentLinkResult) : "No result";
   }
 
   public void onRetrievePaymentLinkLineItems() throws StripeException {
-    JsonNode jsonResult = PaymentService.getInstance().retrievePaymentLinkLineItems(paymentLinkId);
-    retrieveLineItemsResult = jsonResult != null ? jsonResult.toPrettyString() : "No result";
+    PaymentLinksResourceListLineItems lineItemsResult = PaymentService.getInstance().retrievePaymentLinkLineItems(paymentLinkId);
+    retrieveLineItemsResult = lineItemsResult != null ? formatLineItemsResult(lineItemsResult) : "No result";
   }
 
   public void onSetPaymentLinkActive() throws StripeException {
-    JsonNode jsonResult = PaymentService.getInstance().setPaymentLinkActive(paymentLinkId, active);
-    setActiveResult = jsonResult != null ? jsonResult.toPrettyString() : "No result";
+    PaymentLink paymentLinkResult = PaymentService.getInstance().setPaymentLinkActive(paymentLinkId, active);
+    setActiveResult = paymentLinkResult != null ? formatPaymentLinkResult(paymentLinkResult) : "No result";
+  }
+
+  private String formatPaymentLinkResult(PaymentLink paymentLink) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Payment Link Details:\n");
+    sb.append("ID: ").append(paymentLink.getId()).append("\n");
+    sb.append("URL: ").append(paymentLink.getUrl()).append("\n");
+    sb.append("Active: ").append(paymentLink.isActive()).append("\n");
+    return sb.toString();
+  }
+
+  private String formatLineItemsResult(PaymentLinksResourceListLineItems lineItems) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Line Items:\n");
+    if (lineItems.getData() != null && !lineItems.getData().isEmpty()) {
+      sb.append("Items Count: ").append(lineItems.getData().size()).append("\n");
+      for (int i = 0; i < lineItems.getData().size(); i++) {
+        var item = lineItems.getData().get(i);
+        sb.append("Item ").append(i + 1).append(":\n");
+        sb.append("  ID: ").append(item.getId()).append("\n");
+        sb.append("  Amount Total: ").append(item.getAmountTotal()).append("\n");
+        sb.append("  Amount Subtotal: ").append(item.getAmountSubtotal()).append("\n");
+        sb.append("  Amount Tax: ").append(item.getAmountTax()).append("\n");
+        sb.append("  Amount Discount: ").append(item.getAmountDiscount()).append("\n");
+        sb.append("  Currency: ").append(item.getCurrency()).append("\n");
+        sb.append("  Description: ").append(item.getDescription()).append("\n");
+        sb.append("  Quantity: ").append(item.getQuantity()).append("\n");
+      }
+    }
+    return sb.toString();
   }
 
   public String getPriceId() {

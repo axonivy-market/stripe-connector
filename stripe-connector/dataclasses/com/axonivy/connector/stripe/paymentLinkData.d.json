@@ -16,10 +16,13 @@
     "name" : "paymentLinkId",
     "type" : "String"
   }, {
-    "name" : "jsonNodeResult",
-    "type" : "com.fasterxml.jackson.databind.JsonNode"
-  }, {
     "name" : "active",
     "type" : "Boolean"
+  }, {
+    "name" : "paymentLink",
+    "type" : "com.stripe.api.client.PaymentLink"
+  }, {
+    "name" : "paymentLinkLineItems",
+    "type" : "com.stripe.api.client.PaymentLinksResourceListLineItems"
   } ]
 }

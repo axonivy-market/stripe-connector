@@ -2,8 +2,9 @@ package com.axonivy.connector.stripe.service;
 
 import java.util.Optional;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.stripe.Stripe;
+import com.stripe.api.client.PaymentLink;
+import com.stripe.api.client.PaymentLinksResourceListLineItems;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Price;
 import com.stripe.param.checkout.SessionCreateParams;
@@ -43,32 +44,32 @@ public class PaymentService {
     return callResult != null ? callResult.get(URL).toString() : null;
   }
 
-  public JsonNode createPaymentLink(String priceId, Long quantity) {
+  public PaymentLink createPaymentLink(String priceId, Long quantity) {
     SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("createPaymentLink")
         .withParam(PRICE_ID, priceId).withParam(QUANTITY, quantity).call();
-    return callResult != null ? callResult.first(JsonNode.class) : null;
+    return callResult != null ? callResult.first(PaymentLink.class) : null;
   }
 
-  public JsonNode retrievePaymentLink(String paymentLinkId) {
+  public PaymentLink retrievePaymentLink(String paymentLinkId) {
     SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("retrievePaymentLink")
         .withParam(PAYMENT_LINK_ID, paymentLinkId).call();
-    return callResult != null ? callResult.first(JsonNode.class) : null;
+    return callResult != null ? callResult.first(PaymentLink.class) : null;
   }
 
-  public JsonNode retrievePaymentLinkLineItems(String paymentLinkId) {
+  public PaymentLinksResourceListLineItems retrievePaymentLinkLineItems(String paymentLinkId) {
     SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink")
         .withStartName("retrievePaymentLinkLineItems").withParam(PAYMENT_LINK_ID, paymentLinkId).call();
-    return callResult != null ? callResult.first(JsonNode.class) : null;
+    return callResult != null ? callResult.first(PaymentLinksResourceListLineItems.class) : null;
   }
 
-  public JsonNode deactivatePaymentLink(String paymentLinkId) {
+  public PaymentLink deactivatePaymentLink(String paymentLinkId) {
     return setPaymentLinkActive(paymentLinkId, false);
   }
 
-  public JsonNode setPaymentLinkActive(String paymentLinkId, boolean active) {
+  public PaymentLink setPaymentLinkActive(String paymentLinkId, boolean active) {
     SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("setPaymentLinkActive")
         .withParam(PAYMENT_LINK_ID, paymentLinkId).withParam(ACTIVE, active).call();
-    return callResult != null ? callResult.first(JsonNode.class) : null;
+    return callResult != null ? callResult.first(PaymentLink.class) : null;
   }
 
   public Price retrievePrice(String priceId) {

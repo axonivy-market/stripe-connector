@@ -104,8 +104,10 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
-            "code" : "out.result = result.get(\"url\").asText();"
+            "type" : "com.stripe.api.client.PaymentLink",
+            "map" : {
+              "out.result" : "result.url"
+            }
           }
         }
       },
@@ -134,10 +136,10 @@
         },
         "result" : {
           "params" : [
-            { "name" : "jsonNodeResult", "type" : "com.fasterxml.jackson.databind.JsonNode", "desc" : "" }
+            { "name" : "paymentLink", "type" : "com.stripe.api.client.PaymentLink", "desc" : "" }
           ],
           "map" : {
-            "result.jsonNodeResult" : "in.jsonNodeResult"
+            "result.paymentLink" : "in.paymentLink"
           }
         }
       },
@@ -145,7 +147,7 @@
         "at" : { "x" : 208, "y" : 200 }
       },
       "connect" : [
-        { "id" : "f31", "to" : "f30" }
+        { "id" : "f34", "to" : "f33" }
       ]
     }, {
       "id" : "f14",
@@ -170,10 +172,10 @@
         },
         "result" : {
           "params" : [
-            { "name" : "jsonNodeResult", "type" : "com.fasterxml.jackson.databind.JsonNode", "desc" : "" }
+            { "name" : "paymentLink", "type" : "com.stripe.api.client.PaymentLink", "desc" : "" }
           ],
           "map" : {
-            "result.jsonNodeResult" : "in.jsonNodeResult"
+            "result.paymentLink" : "in.paymentLink"
           }
         }
       },
@@ -243,9 +245,9 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "com.stripe.api.client.PaymentLink",
             "map" : {
-              "out.jsonNodeResult" : "result"
+              "out.paymentLink" : "result"
             }
           }
         }
@@ -280,10 +282,10 @@
         },
         "result" : {
           "params" : [
-            { "name" : "jsonNodeResult", "type" : "com.fasterxml.jackson.databind.JsonNode", "desc" : "" }
+            { "name" : "paymentLinkLineItems", "type" : "com.stripe.api.client.PaymentLinksResourceListLineItems", "desc" : "" }
           ],
           "map" : {
-            "result.jsonNodeResult" : "in.jsonNodeResult"
+            "result.paymentLinkLineItems" : "in.paymentLinkLineItems"
           }
         }
       },
@@ -353,9 +355,9 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "com.stripe.api.client.PaymentLinksResourceListLineItems",
             "map" : {
-              "out.jsonNodeResult" : "result"
+              "out.paymentLinkLineItems" : "result"
             }
           }
         }
@@ -392,10 +394,10 @@
         },
         "result" : {
           "params" : [
-            { "name" : "jsonNodeResult", "type" : "com.fasterxml.jackson.databind.JsonNode", "desc" : "" }
+            { "name" : "paymentLink", "type" : "com.stripe.api.client.PaymentLink", "desc" : "" }
           ],
           "map" : {
-            "result.jsonNodeResult" : "in.jsonNodeResult"
+            "result.paymentLink" : "in.paymentLink"
           }
         }
       },
@@ -470,9 +472,9 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "com.stripe.api.client.PaymentLink",
             "map" : {
-              "out.jsonNodeResult" : "result"
+              "out.paymentLink" : "result"
             }
           }
         }
@@ -492,7 +494,7 @@
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
     }, {
-      "id" : "f30",
+      "id" : "f33",
       "type" : "RestClientCall",
       "name" : "Create payment link",
       "config" : {
@@ -552,9 +554,9 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.fasterxml.jackson.databind.JsonNode",
+            "type" : "com.stripe.api.client.PaymentLink",
             "map" : {
-              "out.jsonNodeResult" : "result"
+              "out.paymentLink" : "result"
             }
           }
         }
@@ -564,7 +566,7 @@
         "size" : { "width" : 144, "height" : 62 }
       },
       "connect" : [
-        { "id" : "f32", "to" : "f14" }
+        { "id" : "f35", "to" : "f14" }
       ]
     } ]
 }
