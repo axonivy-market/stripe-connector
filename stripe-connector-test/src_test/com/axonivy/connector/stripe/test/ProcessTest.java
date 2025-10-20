@@ -37,8 +37,6 @@ import ch.ivyteam.ivy.environment.Ivy;
 @IvyProcessTest(enableWebServer = true)
 public class ProcessTest {
 
-	private static final String PRICE_ID = "price_1QeSG6LaeAomYD3LfEHlcjEr";
-
 	private static final String CHECKOUT_SESSION = "/stripe-connector-test/19565E5AC96A55B3/start.ivp?priceId=price_1QeSG6LaeAomYD3LfEHlcjEr&quantity=2&secret=%s&publicKey=%s";
 
 	private static final String LOG_IN = "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
@@ -91,7 +89,7 @@ public class ProcessTest {
 	public void testPaymentLink() throws StripeException {
 		// Test creating a payment link with valid parameters
 		PaymentService paymentService = PaymentService.getInstance();
-		PaymentLink paymentLink = paymentService.createPaymentLink(PRICE_ID, 1L);
+        PaymentLink paymentLink = paymentService.createPaymentLink(System.getProperty("priceId"), 1L);
 
 		assertThat(paymentLink).isNotNull();
 		assertThat(paymentLink.getId()).isNotNull();

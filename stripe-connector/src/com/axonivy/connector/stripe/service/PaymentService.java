@@ -19,6 +19,7 @@ public class PaymentService {
   private static final String PRICE_ID = "priceId";
   private static final String QUANTITY = "quantity";
   private static final String PAYMENT_LINK_ID = "paymentLinkId";
+  private static final String PAYMENT_LINK = "paymentLink";
   private static final String ACTIVE = "active";
   private static final PaymentService instance = new PaymentService();
 
@@ -38,26 +39,26 @@ public class PaymentService {
   }
 
   public String getPaymentLink(String priceId, Long quantity) {
-    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("paymentLink")
+    SubProcessCallResult callResult = SubProcessCall.withPath(PAYMENT_LINK).withStartName(PAYMENT_LINK)
         .withParam(PRICE_ID, priceId).withParam(QUANTITY, quantity).call();
 
     return callResult != null ? callResult.get(URL).toString() : null;
   }
 
   public PaymentLink createPaymentLink(String priceId, Long quantity) {
-    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("createPaymentLink")
+    SubProcessCallResult callResult = SubProcessCall.withPath(PAYMENT_LINK).withStartName("createPaymentLink")
         .withParam(PRICE_ID, priceId).withParam(QUANTITY, quantity).call();
     return callResult != null ? callResult.first(PaymentLink.class) : null;
   }
 
   public PaymentLink retrievePaymentLink(String paymentLinkId) {
-    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("retrievePaymentLink")
+    SubProcessCallResult callResult = SubProcessCall.withPath(PAYMENT_LINK).withStartName("retrievePaymentLink")
         .withParam(PAYMENT_LINK_ID, paymentLinkId).call();
     return callResult != null ? callResult.first(PaymentLink.class) : null;
   }
 
   public PaymentLinksResourceListLineItems retrievePaymentLinkLineItems(String paymentLinkId) {
-    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink")
+    SubProcessCallResult callResult = SubProcessCall.withPath(PAYMENT_LINK)
         .withStartName("retrievePaymentLinkLineItems").withParam(PAYMENT_LINK_ID, paymentLinkId).call();
     return callResult != null ? callResult.first(PaymentLinksResourceListLineItems.class) : null;
   }
@@ -67,7 +68,7 @@ public class PaymentService {
   }
 
   public PaymentLink setPaymentLinkActive(String paymentLinkId, boolean active) {
-    SubProcessCallResult callResult = SubProcessCall.withPath("paymentLink").withStartName("setPaymentLinkActive")
+    SubProcessCallResult callResult = SubProcessCall.withPath(PAYMENT_LINK).withStartName("setPaymentLinkActive")
         .withParam(PAYMENT_LINK_ID, paymentLinkId).withParam(ACTIVE, active).call();
     return callResult != null ? callResult.first(PaymentLink.class) : null;
   }

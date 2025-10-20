@@ -8,49 +8,45 @@
   <ui:param name="managedBean" value="#{paymentLinkBean}" />
   <ui:define name="title">#{ivy.cms.co("/Dialogs/com/axonivy/connector/stripe/demo/PaymendLinkDemo/paymentLinkTitle")}</ui:define>
   <ui:define name="content">
+   <p:tabView>
+    <!-- Tab 1: Original Payment Link Creation -->
+    <p:tab title="Create Link (Response URL)">
+     <h:form id="originalForm">
+      <p:panelGrid columns="3" layout="grid"
+       styleClass="ui-panelgrid-blank ui-fluid"
+       columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-6">
 
-   <!-- Original Payment Link Creation Demo -->
-   <fieldset>
-    <legend>Create Payment Link (URL Response)</legend>
-    <h:form id="originalForm">
-     <p:panelGrid columns="3" layout="grid"
-      styleClass="ui-panelgrid-blank ui-fluid"
-      columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-6">
+       <p:outputLabel for="price" value="PriceID" />
+       <p:inputText id="price" value="#{managedBean.priceId}"
+        disabled="#{managedBean.disableForm}">
+        <f:validator validatorId="priceIdValidator" />
+       </p:inputText>
+       <p:message for="price" />
 
-      <p:outputLabel for="price" value="PriceID" />
-      <p:inputText id="price" value="#{managedBean.priceId}"
-       disabled="#{managedBean.disableForm}">
-       <f:validator validatorId="priceIdValidator" />
-      </p:inputText>
-      <p:message for="price" />
+       <p:outputLabel for="quantity" value="Quantity" />
+       <p:inputNumber id="quantity" value="#{managedBean.quantity}"
+        disabled="#{managedBean.disableForm}">
+        <f:validator validatorId="quantityValidator" />
+       </p:inputNumber>
+       <p:message for="quantity" />
 
-      <p:outputLabel for="quantity" value="Quantity" />
-      <p:inputNumber id="quantity" value="#{managedBean.quantity}"
-       disabled="#{managedBean.disableForm}">
-       <f:validator validatorId="quantityValidator" />
-      </p:inputNumber>
-      <p:message for="quantity" />
+       <p:outputLabel for="result" value="Result" />
+       <p:inputTextarea id="result" rows="6" cols="33"
+        value="#{managedBean.result}" readonly="true" />
 
-      <p:outputLabel for="result" value="Result" />
-      <p:inputTextarea id="result" rows="6" cols="33"
-       value="#{managedBean.result}" readonly="true" />
-
-     </p:panelGrid>
-     <br />
-     <div class="command-btns">
-      <p:commandButton id="createPaymentLinkOriginal"
-       disabled="#{managedBean.disableForm}"
-       actionListener="#{managedBean.onSendRequest()}" value="Create Payment Link"
-       update="@form :createForm :retrieveForm :lineItemsForm :setActiveForm" icon="pi pi-check" />
-     </div>
-    </h:form>
-   </fieldset>
+      </p:panelGrid>
+      <br />
+      <div class="command-btns">
+       <p:commandButton id="createPaymentLinkOriginal"
+        disabled="#{managedBean.disableForm}" process="@form"
+        actionListener="#{managedBean.onSendRequest()}" value="Create Payment Link"
+        update="@form" icon="pi pi-check" />
+      </div>
+     </h:form>
+    </p:tab>
     
-    <br/>
-    
-    <!-- Create Payment Link Demo -->
-    <fieldset>
-     <legend>Create Payment Link (Object Response)</legend>
+    <!-- Tab 2: Create Payment Link Object -->
+    <p:tab title="Create Link (Response Object)">
      <h:form id="createForm">
       <p:panelGrid columns="3" layout="grid"
        styleClass="ui-panelgrid-blank ui-fluid"
@@ -76,16 +72,13 @@
       <div class="command-btns">
        <p:commandButton id="createPaymentLinkBtn" 
         actionListener="#{managedBean.onCreatePaymentLink()}" value="Create Payment Link"
-        update="@form :originalForm :retrieveForm :lineItemsForm :setActiveForm" icon="pi pi-plus" />
+        update="@form" icon="pi pi-plus" />
       </div>
      </h:form>
-    </fieldset>
+    </p:tab>
     
-    <br/>
-    
-    <!-- Retrieve Payment Link Demo -->
-    <fieldset>
-     <legend>Retrieve Payment Link</legend>
+    <!-- Tab 3: Retrieve Payment Link -->
+    <p:tab title="Retrieve Link">
      <h:form id="retrieveForm">
       <p:panelGrid columns="3" layout="grid"
        styleClass="ui-panelgrid-blank ui-fluid"
@@ -103,16 +96,13 @@
       <div class="command-btns">
        <p:commandButton id="retrievePaymentLinkBtn" 
         actionListener="#{managedBean.onRetrievePaymentLink()}" value="Retrieve Payment Link"
-        update="@form :originalForm :createForm :lineItemsForm :setActiveForm" icon="pi pi-search" />
+        update="@form" icon="pi pi-search" />
       </div>
      </h:form>
-    </fieldset>
+    </p:tab>
     
-    <br/>
-    
-    <!-- Retrieve Payment Link Line Items Demo -->
-    <fieldset>
-     <legend>Retrieve Payment Link Line Items</legend>
+    <!-- Tab 4: Retrieve Line Items -->
+    <p:tab title="Line Items">
      <h:form id="lineItemsForm">
       <p:panelGrid columns="3" layout="grid"
        styleClass="ui-panelgrid-blank ui-fluid"
@@ -130,16 +120,13 @@
       <div class="command-btns">
        <p:commandButton id="retrieveLineItemsBtn" 
         actionListener="#{managedBean.onRetrievePaymentLinkLineItems()}" value="Retrieve Line Items"
-        update="@form :originalForm :createForm :retrieveForm :setActiveForm" icon="pi pi-list" />
+        update="@form" icon="pi pi-list" />
       </div>
      </h:form>
-    </fieldset>
+    </p:tab>
     
-    <br/>
-    
-    <!-- Set Payment Link Active Demo -->
-    <fieldset>
-     <legend>Set Payment Link Active Status</legend>
+    <!-- Tab 5: Set Active Status -->
+    <p:tab title="Set Active">
      <h:form id="setActiveForm">
       <p:panelGrid columns="3" layout="grid"
        styleClass="ui-panelgrid-blank ui-fluid"
@@ -161,17 +148,17 @@
       <div class="command-btns">
        <p:commandButton id="setActiveBtn" 
         actionListener="#{managedBean.onSetPaymentLinkActive()}" value="Set Active Status"
-        update="@form :originalForm :createForm :retrieveForm :lineItemsForm" icon="pi pi-cog" />
+        update="@form" icon="pi pi-cog" />
       </div>
      </h:form>
-    </fieldset>
-    
-    <br/>
-    
-    <div class="command-btns">
-     <p:commandLink id="cancel" actionListener="#{logic.close}" value="Cancel"
-      immediate="true" />
-    </div>
+    </p:tab>
+   </p:tabView>
+   
+   <br/>
+   <div class="command-btns">
+    <p:commandLink id="cancel" actionListener="#{logic.close}" value="Cancel"
+     immediate="true" />
+   </div>
   </ui:define>
  </ui:composition>
 </h:body>

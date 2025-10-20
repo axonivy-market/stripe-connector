@@ -103,11 +103,11 @@
           </execution>
         </executions>
         <configuration>
-          <argLine>-Dtest.engine.url=${test.engine.url}
-						-Dtest.engine.app=stripeconnectortest</argLine>
+          <argLine>-Dtest.engine.url=${test.engine.url} -Dtest.engine.app=stripeconnectortest</argLine>
           <systemPropertyVariables>
             <secretKey>${stripe.secretKey}</secretKey>
             <publishableKey>${stripe.publishableKey}</publishableKey>
+            <priceId>${stripe.priceId}</priceId>
           </systemPropertyVariables>
         </configuration>
       </plugin>
