@@ -12,9 +12,6 @@
   <artifactId>stripe-connector</artifactId>
   <version>13.1.1-SNAPSHOT</version>
   <packaging>iar</packaging>
-  <properties>
-    <project.build.plugin.version>13.1.0</project.build.plugin.version>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>com.stripe</groupId>

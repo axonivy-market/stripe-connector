@@ -12,11 +12,6 @@
   <artifactId>stripe-connector-test</artifactId>
   <version>13.1.1-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
-  <properties>
-    <ivy.engine.version>13.1.0</ivy.engine.version>
-    <tester.version>13.1.0</tester.version>
-    <project.build.plugin.version>13.1.0</project.build.plugin.version>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>com.axonivy.connector.stripe</groupId>
@@ -85,7 +80,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M4</version>
         <executions>
           <execution>
             <id>default-test</id>
