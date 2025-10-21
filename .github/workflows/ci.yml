@@ -16,4 +16,4 @@ jobs:
   build:
     uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v6
     secrets:
-      mvnArgs: -Dstripe.secretKey=${{secrets.SECRET_KEY}} -Dstripe.publishableKey=${{secrets.PUBLISHABLE_KEY}} -Dstripe.priceId=${{secrets.PRICE_ID}}
+      mvnArgs: -Dstripe.secretKey=${{secrets.SECRET_KEY}} -Dstripe.publishableKey=${{secrets.PUBLISHABLE_KEY}}

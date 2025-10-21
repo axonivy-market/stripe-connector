@@ -101,7 +101,6 @@
           <systemPropertyVariables>
             <secretKey>${stripe.secretKey}</secretKey>
             <publishableKey>${stripe.publishableKey}</publishableKey>
-            <priceId>${stripe.priceId}</priceId>
           </systemPropertyVariables>
         </configuration>
       </plugin>
