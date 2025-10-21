@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.axonivy.ivy.api</groupId>
     <artifactId>ivy-project-parent</artifactId>
-    <version>13.1.0</version>
-    <relativePath />
+    <version>13.1.1</version>
+    <relativePath></relativePath>
   </parent>
   <groupId>com.axonivy.connector.stripe</groupId>
   <artifactId>stripe-connector-test</artifactId>
   <version>13.1.1-SNAPSHOT</version>
   <packaging>iar-integration-test</packaging>
-  <properties>
-    <ivy.engine.version>13.1.0</ivy.engine.version>
-    <tester.version>13.1.0</tester.version>
-    <project.build.plugin.version>13.1.0</project.build.plugin.version>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>com.axonivy.connector.stripe</groupId>
@@ -84,7 +80,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M4</version>
         <executions>
           <execution>
             <id>default-test</id>
@@ -102,8 +97,7 @@
           </execution>
         </executions>
         <configuration>
-          <argLine>-Dtest.engine.url=${test.engine.url}
-						-Dtest.engine.app=stripeconnectortest</argLine>
+          <argLine>-Dtest.engine.url=${test.engine.url} -Dtest.engine.app=stripeconnectortest</argLine>
           <systemPropertyVariables>
             <secretKey>${stripe.secretKey}</secretKey>
             <publishableKey>${stripe.publishableKey}</publishableKey>

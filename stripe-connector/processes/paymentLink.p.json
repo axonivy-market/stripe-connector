@@ -118,5 +118,455 @@
       "connect" : [
         { "id" : "f9", "to" : "f1", "color" : "default" }
       ]
+    }, {
+      "id" : "f10",
+      "type" : "CallSubStart",
+      "name" : "createPaymentLink(String,Number)",
+      "config" : {
+        "signature" : "createPaymentLink",
+        "input" : {
+          "params" : [
+            { "name" : "priceId", "type" : "String", "desc" : "" },
+            { "name" : "quantity", "type" : "Number", "desc" : "" }
+          ],
+          "map" : {
+            "out.priceId" : "param.priceId",
+            "out.quantity" : "param.quantity"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "paymentLink", "type" : "com.stripe.api.client.PaymentLink", "desc" : "" }
+          ],
+          "map" : {
+            "result.paymentLink" : "in.paymentLink"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 200 }
+      },
+      "connect" : [
+        { "id" : "f34", "to" : "f33" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 592, "y" : 200 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f15",
+      "type" : "CallSubStart",
+      "name" : "retrievePaymentLink(String)",
+      "config" : {
+        "signature" : "retrievePaymentLink",
+        "input" : {
+          "params" : [
+            { "name" : "paymentLinkId", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.paymentLinkId" : "param.paymentLinkId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "paymentLink", "type" : "com.stripe.api.client.PaymentLink", "desc" : "" }
+          ],
+          "map" : {
+            "result.paymentLink" : "in.paymentLink"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 328 }
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f17" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "RestClientCall",
+      "name" : "Retrieve payment link",
+      "config" : {
+        "target" : {
+          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "path" : "/v1/payment_links/{payment_link}",
+          "templateParams" : {
+            "payment_link" : "in.paymentLinkId"
+          },
+          "queryParams" : {
+            "expand" : ""
+          },
+          "headers" : {
+            "Accept" : "application/x-www-form-urlencoded",
+            "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
+          },
+          "properties" : {
+            "" : ""
+          }
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "application/x-www-form-urlencoded",
+          "form" : {
+            "after_completion" : [ "" ],
+            "allow_promotion_codes" : [ "" ],
+            "application_fee_amount" : [ "" ],
+            "application_fee_percent" : [ "" ],
+            "automatic_tax" : [ "" ],
+            "billing_address_collection" : [ "" ],
+            "consent_collection" : [ "" ],
+            "currency" : [ "" ],
+            "custom_fields" : [ "" ],
+            "custom_text" : [ "" ],
+            "customer_creation" : [ "" ],
+            "expand" : [ "" ],
+            "inactive_message" : [ "" ],
+            "invoice_creation" : [ "" ],
+            "line_items" : [ "" ],
+            "metadata" : [ "" ],
+            "on_behalf_of" : [ "" ],
+            "payment_intent_data" : [ "" ],
+            "payment_method_collection" : [ "" ],
+            "payment_method_types" : [ "" ],
+            "phone_number_collection" : [ "" ],
+            "restrictions" : [ "" ],
+            "shipping_address_collection" : [ "" ],
+            "shipping_options" : [ "" ],
+            "submit_type" : [ "" ],
+            "subscription_data" : [ "" ],
+            "tax_id_collection" : [ "" ],
+            "transfer_data" : [ "" ],
+            "line_items[0][price]" : [ "in.priceId" ],
+            "line_items[0][quantity]" : [ "in.quantity" ]
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.stripe.api.client.PaymentLink",
+            "map" : {
+              "out.paymentLink" : "result"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 416, "y" : 328 },
+        "size" : { "width" : 144, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f18", "to" : "f19", "color" : "default" }
+      ]
+    }, {
+      "id" : "f19",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 592, "y" : 328 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f20",
+      "type" : "CallSubStart",
+      "name" : "retrievePaymentLinkLineItems(String)",
+      "config" : {
+        "signature" : "retrievePaymentLinkLineItems",
+        "input" : {
+          "params" : [
+            { "name" : "paymentLinkId", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.paymentLinkId" : "param.paymentLinkId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "paymentLinkLineItems", "type" : "com.stripe.api.client.PaymentLinksResourceListLineItems", "desc" : "" }
+          ],
+          "map" : {
+            "result.paymentLinkLineItems" : "in.paymentLinkLineItems"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 464 }
+      },
+      "connect" : [
+        { "id" : "f21", "to" : "f22" }
+      ]
+    }, {
+      "id" : "f22",
+      "type" : "RestClientCall",
+      "name" : "Retrieve payment link's line items",
+      "config" : {
+        "target" : {
+          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "path" : "/v1/payment_links/{payment_link}/line_items",
+          "templateParams" : {
+            "payment_link" : "in.paymentLinkId"
+          },
+          "queryParams" : {
+            "expand" : ""
+          },
+          "headers" : {
+            "Accept" : "application/x-www-form-urlencoded",
+            "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
+          },
+          "properties" : {
+            "" : ""
+          }
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "application/x-www-form-urlencoded",
+          "form" : {
+            "after_completion" : [ "" ],
+            "allow_promotion_codes" : [ "" ],
+            "application_fee_amount" : [ "" ],
+            "application_fee_percent" : [ "" ],
+            "automatic_tax" : [ "" ],
+            "billing_address_collection" : [ "" ],
+            "consent_collection" : [ "" ],
+            "currency" : [ "" ],
+            "custom_fields" : [ "" ],
+            "custom_text" : [ "" ],
+            "customer_creation" : [ "" ],
+            "expand" : [ "" ],
+            "inactive_message" : [ "" ],
+            "invoice_creation" : [ "" ],
+            "line_items" : [ "" ],
+            "metadata" : [ "" ],
+            "on_behalf_of" : [ "" ],
+            "payment_intent_data" : [ "" ],
+            "payment_method_collection" : [ "" ],
+            "payment_method_types" : [ "" ],
+            "phone_number_collection" : [ "" ],
+            "restrictions" : [ "" ],
+            "shipping_address_collection" : [ "" ],
+            "shipping_options" : [ "" ],
+            "submit_type" : [ "" ],
+            "subscription_data" : [ "" ],
+            "tax_id_collection" : [ "" ],
+            "transfer_data" : [ "" ],
+            "line_items[0][price]" : [ "in.priceId" ],
+            "line_items[0][quantity]" : [ "in.quantity" ]
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.stripe.api.client.PaymentLinksResourceListLineItems",
+            "map" : {
+              "out.paymentLinkLineItems" : "result"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 416, "y" : 464 },
+        "size" : { "width" : 144, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f23", "to" : "f24", "color" : "default" }
+      ]
+    }, {
+      "id" : "f24",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 592, "y" : 464 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f25",
+      "type" : "CallSubStart",
+      "name" : "setPaymentLinkActive(String,Boolean)",
+      "config" : {
+        "signature" : "setPaymentLinkActive",
+        "input" : {
+          "params" : [
+            { "name" : "paymentLinkId", "type" : "String", "desc" : "" },
+            { "name" : "active", "type" : "Boolean", "desc" : "" }
+          ],
+          "map" : {
+            "out.active" : "param.active",
+            "out.paymentLinkId" : "param.paymentLinkId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "paymentLink", "type" : "com.stripe.api.client.PaymentLink", "desc" : "" }
+          ],
+          "map" : {
+            "result.paymentLink" : "in.paymentLink"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 600 }
+      },
+      "connect" : [
+        { "id" : "f26", "to" : "f27" }
+      ]
+    }, {
+      "id" : "f27",
+      "type" : "RestClientCall",
+      "name" : "Update payment link",
+      "config" : {
+        "method" : "POST",
+        "target" : {
+          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "path" : "/v1/payment_links/{payment_link}",
+          "templateParams" : {
+            "payment_link" : "in.paymentLinkId"
+          },
+          "queryParams" : {
+            "expand" : ""
+          },
+          "headers" : {
+            "Accept" : "application/x-www-form-urlencoded",
+            "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
+          },
+          "properties" : {
+            "" : ""
+          }
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "application/x-www-form-urlencoded",
+          "form" : {
+            "active" : [ "in.active" ],
+            "after_completion" : [ "" ],
+            "allow_promotion_codes" : [ "" ],
+            "automatic_tax" : [ "" ],
+            "billing_address_collection" : [ "" ],
+            "custom_fields" : [ "" ],
+            "custom_text" : [ "" ],
+            "customer_creation" : [ "" ],
+            "expand" : [ "" ],
+            "inactive_message" : [ "" ],
+            "invoice_creation" : [ "" ],
+            "line_items" : [ "" ],
+            "metadata" : [ "" ],
+            "payment_intent_data" : [ "" ],
+            "payment_method_collection" : [ "" ],
+            "payment_method_types" : [ "" ],
+            "phone_number_collection" : [ "" ],
+            "restrictions" : [ "" ],
+            "shipping_address_collection" : [ "" ],
+            "submit_type" : [ "" ],
+            "subscription_data" : [ "" ],
+            "tax_id_collection" : [ "" ],
+            "application_fee_amount" : [ "" ],
+            "application_fee_percent" : [ "" ],
+            "consent_collection" : [ "" ],
+            "currency" : [ "" ],
+            "on_behalf_of" : [ "" ],
+            "shipping_options" : [ "" ],
+            "transfer_data" : [ "" ],
+            "line_items[0][price]" : [ "" ],
+            "line_items[0][quantity]" : [ "" ]
+          },
+          "entity" : {
+            "type" : "com.stripe.api.client.PaymentLinksPaymentLinkBody"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.stripe.api.client.PaymentLink",
+            "map" : {
+              "out.paymentLink" : "result"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 416, "y" : 600 },
+        "size" : { "width" : 144, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f28", "to" : "f29", "color" : "default" }
+      ]
+    }, {
+      "id" : "f29",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 592, "y" : 600 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f33",
+      "type" : "RestClientCall",
+      "name" : "Create payment link",
+      "config" : {
+        "method" : "POST",
+        "target" : {
+          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "path" : "/v1/payment_links",
+          "queryParams" : {
+            "" : ""
+          },
+          "headers" : {
+            "Accept" : "application/x-www-form-urlencoded",
+            "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"
+          },
+          "properties" : {
+            "" : ""
+          }
+        },
+        "body" : {
+          "type" : "FORM",
+          "mediaType" : "application/x-www-form-urlencoded",
+          "form" : {
+            "after_completion" : [ "" ],
+            "allow_promotion_codes" : [ "" ],
+            "application_fee_amount" : [ "" ],
+            "application_fee_percent" : [ "" ],
+            "automatic_tax" : [ "" ],
+            "billing_address_collection" : [ "" ],
+            "consent_collection" : [ "" ],
+            "currency" : [ "" ],
+            "custom_fields" : [ "" ],
+            "custom_text" : [ "" ],
+            "customer_creation" : [ "" ],
+            "expand" : [ "" ],
+            "inactive_message" : [ "" ],
+            "invoice_creation" : [ "" ],
+            "line_items" : [ "" ],
+            "metadata" : [ "" ],
+            "on_behalf_of" : [ "" ],
+            "payment_intent_data" : [ "" ],
+            "payment_method_collection" : [ "" ],
+            "payment_method_types" : [ "" ],
+            "phone_number_collection" : [ "" ],
+            "restrictions" : [ "" ],
+            "shipping_address_collection" : [ "" ],
+            "shipping_options" : [ "" ],
+            "submit_type" : [ "" ],
+            "subscription_data" : [ "" ],
+            "tax_id_collection" : [ "" ],
+            "transfer_data" : [ "" ],
+            "line_items[0][price]" : [ "in.priceId" ],
+            "line_items[0][quantity]" : [ "in.quantity" ]
+          },
+          "entity" : {
+            "type" : "com.stripe.api.client.V1PaymentLinksBody"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.stripe.api.client.PaymentLink",
+            "map" : {
+              "out.paymentLink" : "result"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 416, "y" : 200 },
+        "size" : { "width" : 144, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f35", "to" : "f14" }
+      ]
     } ]
 }

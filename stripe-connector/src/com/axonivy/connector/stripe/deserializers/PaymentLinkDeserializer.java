@@ -31,7 +31,9 @@ public class PaymentLinkDeserializer extends JsonDeserializer<PaymentLink> {
   private PaymentLink parsePaymentLink(JsonParser parser) throws IOException {
     JsonNode node = parser.readValueAsTree();
     PaymentLink result = new PaymentLink();
+    result.setId(node.get("id").asText());
     result.setUrl(node.get("url").asText());
+    result.setActive(node.get("active").asBoolean());
     return result;
   }
 
