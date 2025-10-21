@@ -1,9 +1,9 @@
 package com.axonivy.connector.stripe.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.Arrays;
 
@@ -25,7 +25,7 @@ public class PaymentLinkTest extends BaseTest {
   private static final BpmElement RETRIEVE_PAYMENT_LINK_START = PAYMENT_LINK_PROCESS.elementName("retrievePaymentLink(String)");
   private static final BpmElement RETRIEVE_PAYMENT_LINK_LINE_ITEMS_START = PAYMENT_LINK_PROCESS.elementName("retrievePaymentLinkLineItems(String)");
   private static final BpmElement SET_PAYMENT_LINK_ACTIVE_START = PAYMENT_LINK_PROCESS.elementName("setPaymentLinkActive(String,Boolean)");
-  
+
   // REST client call elements to mock
   private static final BpmElement CREATE_PAYMENT_LINK_REST = PAYMENT_LINK_PROCESS.elementName("Create payment link");
   private static final BpmElement RETRIEVE_PAYMENT_LINK_REST = PAYMENT_LINK_PROCESS.elementName("Retrieve payment link");
@@ -48,7 +48,7 @@ public class PaymentLinkTest extends BaseTest {
         // Verify input parameters
         assertEquals(in.get("priceId"), MOCK_PRICE_ID);
         assertEquals(in.get("quantity"), MOCK_QUANTITY);
-        
+
         // Set mock response
         in.set("paymentLink", mockPaymentLink);
         return in;
@@ -81,7 +81,7 @@ public class PaymentLinkTest extends BaseTest {
       try {
         // Verify input parameter
         assertEquals(in.get("paymentLinkId"), MOCK_PAYMENT_LINK_ID);
-        
+
         // Set mock response
         in.set("paymentLink", mockPaymentLink);
         return in;
@@ -114,7 +114,7 @@ public class PaymentLinkTest extends BaseTest {
       try {
         // Verify input parameter
         assertEquals(in.get("paymentLinkId"), MOCK_PAYMENT_LINK_ID);
-        
+
         // Set mock response
         in.set("paymentLinkLineItems", mockLineItems);
         return in;
@@ -148,7 +148,7 @@ public class PaymentLinkTest extends BaseTest {
         // Verify input parameters
         assertEquals(in.get("paymentLinkId"), MOCK_PAYMENT_LINK_ID);
         assertEquals(in.get("active"), false);
-        
+
         // Set mock response
         in.set("paymentLink", mockPaymentLink);
         return in;
@@ -181,7 +181,7 @@ public class PaymentLinkTest extends BaseTest {
         // Verify input parameters
         assertEquals(in.get("paymentLinkId"), MOCK_PAYMENT_LINK_ID);
         assertEquals(in.get("active"), true);
-        
+
         // Set mock response
         in.set("paymentLink", mockPaymentLink);
         return in;
