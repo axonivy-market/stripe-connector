@@ -31,56 +31,56 @@ import ch.ivyteam.ivy.environment.Ivy;
 @IvyProcessTest(enableWebServer = true)
 public class ProcessTest {
 
-    private static final String CHECKOUT_SESSION = "/stripe-connector-test/19565E5AC96A55B3/start.ivp?priceId=price_1QeSG6LaeAomYD3LfEHlcjEr&quantity=2&secret=%s&publicKey=%s";
+  private static final String CHECKOUT_SESSION = "/stripe-connector-test/19565E5AC96A55B3/start.ivp?priceId=price_1QeSG6LaeAomYD3LfEHlcjEr&quantity=2&secret=%s&publicKey=%s";
 
-    private static final String LOG_IN = "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
+  private static final String LOG_IN = "/stripe-connector-test/1946E968E7BAB355/logInUser.ivp?username=Developer&password=Developer";
 
-    @BeforeAll
-    public static void setup() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-web-security");
-        Configuration.reportsFolder = null;
-        Configuration.savePageSource = false;
-        Configuration.screenshots = false;
-        Configuration.browserCapabilities = options;
-        Configuration.browser = "chrome";
-    }
+  @BeforeAll
+  public static void setup() {
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--headless");
+    options.addArguments("--disable-web-security");
+    Configuration.reportsFolder = null;
+    Configuration.savePageSource = false;
+    Configuration.screenshots = false;
+    Configuration.browserCapabilities = options;
+    Configuration.browser = "chrome";
+  }
 
-    @AfterAll
-    public static void cleanup() {
-        Ivy.var().reset("stripe.auth.secretKey");
-        Ivy.var().reset("stripe.auth.publishableKey");
-    }
+  @AfterAll
+  public static void cleanup() {
+    Ivy.var().reset("stripe.auth.secretKey");
+    Ivy.var().reset("stripe.auth.publishableKey");
+  }
 
-    @TestTemplate
-    public void testCreateCheckoutSession() {
-        String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
-        open(EngineUrl.createProcessUrl(LOG_IN));
-        open(EngineUrl.createProcessUrl(processPath));
-        $(By.id("form:resquest-button")).shouldBe(enabled).click();
+  @TestTemplate
+  public void testCreateCheckoutSession() {
+    String processPath = CHECKOUT_SESSION.formatted(System.getProperty("secretKey"), System.getProperty("publishableKey"));
+    open(EngineUrl.createProcessUrl(LOG_IN));
+    open(EngineUrl.createProcessUrl(processPath));
+    $(By.id("form:resquest-button")).shouldBe(enabled).click();
 
-        SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
-        Selenide.switchTo().frame(iframe);
+    SelenideElement iframe = $(By.tagName("iframe")).shouldBe(visible, Duration.ofSeconds(300));
+    Selenide.switchTo().frame(iframe);
 
-        clickAndInputValue("email", "Octopus@gmail.com");
-        clickAndInputValue("cardNumber", "4242424242424242");
-        clickAndInputValue("cardExpiry", "04/31");
-        clickAndInputValue("cardCvc", "115");
-        clickAndInputValue("billingName", "test");
+    clickAndInputValue("email", "Octopus@gmail.com");
+    clickAndInputValue("cardNumber", "4242424242424242");
+    clickAndInputValue("cardExpiry", "04/31");
+    clickAndInputValue("cardCvc", "115");
+    clickAndInputValue("billingName", "test");
 
-        $("#billingCountry").shouldBe(visible).selectOption("Vietnam");
-        $(By.className("SubmitButton")).shouldBe(enabled).click();
+    $("#billingCountry").shouldBe(visible).selectOption("Vietnam");
+    $(By.className("SubmitButton")).shouldBe(enabled).click();
 
-        WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        alert.accept();
+    WebDriverWait wait = new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(300));
+    Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+    alert.accept();
 
-        $(By.className("PaymentSuccess")).shouldBe(visible);
-    }
+    $(By.className("PaymentSuccess")).shouldBe(visible);
+  }
 
-    private void clickAndInputValue(String id, String value) {
-        $(By.id(id)).click();
-        $(By.id(id)).sendKeys(value);
-    }
+  private void clickAndInputValue(String id, String value) {
+    $(By.id(id)).click();
+    $(By.id(id)).sendKeys(value);
+  }
 }
