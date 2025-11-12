@@ -1,4 +1,4 @@
-# Stripe Connector
+# Stripe Connectors
 
 **Stripe** is a comprehensive **payment processing platform** that enables
 businesses to accept **online and in-person payments**. It provides a powerful
