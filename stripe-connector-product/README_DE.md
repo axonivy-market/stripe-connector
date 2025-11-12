@@ -10,7 +10,7 @@ into a **business process**, enabling automated and efficient payment handling
 within Axon Ivy.
 
 
-### 1. Generating a Payment Link
+### 1. Generating a Payment L ink
  * Based on **priceId** and **quantity**, a **payment link** can be generated.
  * This link redirects the user to the secure **Stripe payment page**, where the
    payment can be completed.
