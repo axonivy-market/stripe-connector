@@ -3,11 +3,14 @@
 **Stripe** is a comprehensive **payment processing platform** that enables
 businesses to accept **online and in-person payments**. It provides a powerful
 API to integrate various payment methods, including **credit/debit cards,
-digital wallets, bank transfers**, and more.
+digital wallets, bank transfers**, and
+more.asdasd12e2312312333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333.
 
-We provide a **connector** that seamlessly integrates Stripe's functionality
-into a **business process**, enabling automated and efficient payment handling
-within Axon Ivy.
+**Stripe** is a comprehensive **payment processing platform** that enables
+businesses to accept **online and in-person payments**. It provides a powerful
+API to integrate various payment methods, including **credit/debit cards,
+digital wallets, bank transfers**, and
+more.asdasd12e2312312333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333.asdq3w43424312321.
 
 
 ### 1. Generating a Payment L ink
