@@ -1,13 +1,14 @@
-# Stripe Connector
+# Streifen Anschluss
 
-**Stripe** is a comprehensive **payment processing platform** that enables
-businesses to accept **online and in-person payments**. It provides a powerful
-API to integrate various payment methods, including **credit/debit cards,
-digital wallets, bank transfers**, and more.
+**Streifen** ist ein umfassendes **Abzahlung Verarbeitung Bahnsteig** jener
+aktiviert Geschäfte zu akzeptieren **#online und herein-Person Abzahlungen**. Es
+versieht ein kraftvolles API zu integrieren verschiedene Abzahlung Methoden,
+#eingerechnet **Kredit/Belastung Karten, digitale Brieftaschen, Bank
+Versetzungen**, und More.
 
-We provide a **connector** that seamlessly integrates Stripe's functionality
-into a **business process**, enabling automated and efficient payment handling
-within Axon Ivy.
+Wir versehen ein **Anschluss** jener integriert #bruchlos Streifens
+Funktionalität hinein eine **dienstlichen Arbeitsgang**, aktivierend
+automatisiert und leistungsstarke Abzahlung bedienen innerhalb #Axon Efeu.
 
 
 ### 1. Generating a Payment L ink
