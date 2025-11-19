@@ -1,75 +1,77 @@
-# Streifen Anschluss
+# Stripe Konnektor
 
-**Streifen** ist ein umfassendes **Abzahlung Verarbeitung Bahnsteig** jener
-aktiviert Geschäfte zu akzeptieren **#online und herein-Person Abzahlungen**. Es
-versieht ein kraftvolles API zu integrieren verschiedene Abzahlung Methoden,
-#eingerechnet **Kredit/Belastung Karten, digitale Brieftaschen, Bank
-Versetzungen**, und More.
+**Stripe** ist eine umfassende **Zahlungsabwicklungsplattform**, die es
+Unternehmen ermöglicht, **Online- und persönliche Zahlungen** zu akzeptieren.
+Sie bietet eine leistungsstarke API zur Integration verschiedener
+Zahlungsmethoden, darunter **Kredit-/Debitkarten, digitale Geldbörsen,
+Banküberweisungen** und mehr.
 
-Wir versehen ein **Anschluss** jener integriert #bruchlos Streifens
-Funktionalität hinein eine **dienstlichen Arbeitsgang**, aktivierend
-automatisiert und leistungsstarke Abzahlung bedienen innerhalb #Axon Efeu.
+Wir bieten einen **-Konnektor**, der die Funktionen von Stripe nahtlos in einen
+**-Geschäftsprozess** integriert und so eine automatisierte und effiziente
+Zahlungsabwicklung innerhalb von Axon Ivy ermöglicht.
 
 
 ### 1. Generating a Payment L ink
- * Weiter basisbezogen **priceId** und **Menge**, eine **Abzahlung Band** kann
-   sein generiert.
- * Dieses Band leitet um den Nutzer zu das festes **Streifen Abzahlung Seite**,
-   #wo kann die Abzahlung sein vervollständigt.
+ * Basierend auf **priceId** und **quantity** kann ein **Zahlungslink**
+   generiert werden.
+ * **Dieser Link leitet den Benutzer zur sicheren Stripe-Zahlungsseite **weiter,
+   auf der die Zahlung abgeschlossen werden kann.
 
-### 2. #Eingraben Streifen Abzahlung Form
- * Die Streifen Abzahlung Form kann sein #eingraben direkt hinein die **#Axon
-   Efeu UI**.
- * Dies erlaubt Abzahlungen zu sein verarbeitet **innerhalb den Antrag** ohne
-   #umleiten zu #Streiften.
+### 2. Eingebettetes Stripe-Zahlungsformular
+ * Das Stripe-Zahlungsformular kann direkt in die Axon Ivy-Benutzeroberfläche
+   **Axon Ivy UI** eingebettet werden.
+ * Dadurch können Zahlungen **innerhalb der Anwendung** verarbeitet werden, ohne
+   dass eine Weiterleitung zu Stripe erforderlich ist.
 
-## Was ist ein Abzahlung Band?
-Ein **Abzahlung Band** ist ein URL generiert bei #Streiften jener erlaubt
-Kundinnen zu machen direkt eine Abzahlung. Es zügelt #vordefiniert **Preise und
-Mengen** und aktivieren nahtlose Abzahlung verarbeiten durch verschiedene
-Methoden.
+## Was ist ein Zahlungslink?
+Ein **Zahlungslink** ist eine von Stripe generierte URL, über die Kunden direkt
+eine Zahlung vornehmen können. Er enthält vordefinierte **Preise und Mengen**
+und ermöglicht eine nahtlose Zahlungsabwicklung über verschiedene Methoden.
 
 
-## Was ist das priceId?
-Das **priceId** ist eine einmalige Bezeichnung für einen Preis in #Streiften. Es
-ist automatisch #wann generiert einen Preis ist geschafft herein für ein Produkt
-das **Streifen Armaturenbrett**. Dies **priceId** ist benutzt zu richtig
-assoziieren Abzahlungen und können sein genutzt via die API oder #wann schaffend
-ein Abzahlung Band.
+## Was ist die priceId?
+Die **priceId** ist eine eindeutige Kennung für einen Preis in Stripe. Sie wird
+automatisch generiert, wenn ein Preis für ein Produkt im **Stripe Dashboard**
+erstellt wird. Diese **priceId** wird verwendet, um Zahlungen korrekt
+zuzuordnen, und kann über die API oder beim Erstellen eines Zahlungslinks
+verwendet werden.
 
 
 
 ## Demo
 
-### Nutzung Fall: Schaff ein paymentLink basisbezogen auf Menge und priceId (bitte folgen Installation Fremdenführer zu bekommen den priceId)
+### Anwendungsfall: Erstellen Sie einen paymentLink basierend auf Menge und priceId (befolgen Sie bitte die Installation Guide, um die priceId zu erhalten).
 ![](images/create_paymentLink.png)
 
-#### Wir können dieses Band benutzen zu umleiten zu die Streifen Abzahlung Website und machen eine Abzahlung.
+#### Über diesen Link können wir zur Zahlungswebsite von Stripe weitergeleitet werden und eine Zahlung vornehmen.
 ![](images/redirect_to_paymentLink.png)
 
-### Nutzung Fall: #Eingraben das Streifen Austesten Session Seite hinein die Form.
+### Anwendungsfall: Einbetten der Stripe-Checkout-Seite in das Formular.
 
-- Bitte #einlesen den Preis ID und Menge, dann unterzieht Klick.
-- Die Streifen Abzahlung Austesten Session Form will sein #ausschmelzen unten.
+- Bitte geben Sie die Preis-ID und die Menge ein und klicken Sie dann auf
+  „Absenden”.
+- Das Stripe-Zahlungsformular wird unten angezeigt.
   ![](images/create_embed_checkout_session.png)
 
-- Nach füllen #hinaus die Abzahlung Form und klickend "Abonniert," die Form will
-  sein automatisch zu einer erfolgreichen Mitteilung umgeleitet Seite.
-  ![](images/return_successful_page.png)
+- Nachdem Sie das Zahlungsformular ausgefüllt und auf „Abonnieren” geklickt
+  haben, wird das Formular automatisch zu einer Seite mit einer erfolgreichen
+  Benachrichtigung weitergeleitet. ![](images/return_successful_page.png)
 
 ## Einrichtung
-1. Schaff ein **Konto**: **[Hier](https://stripe.com/en-de) **
-2. Geh zu dem Armaturenbrett und Suche **Entwickler** ->**API Schlüssel** und
-   Schaffen **Geheimen Schlüssel und publishable Schlüssel**
-   ![](images/create_api_keys.png)
-3. Füg zu neue Produkte und setzen ihre Preise ![](images/Create_products.png)
-   ![](images/add_product.png)
-4. Greif zu die Produkte zu bekommen den Preis ID von diesem Produkt.
+1. Erstellen Sie ein Konto bei **** : **[hier](https://stripe.com/en-de) **
+2. Gehen Sie zum Dashboard und suchen Sie „ **“ Entwickler** ->**API-Schlüssel**
+   und erstellen Sie **einen geheimen Schlüssel und einen veröffentlichbaren
+   Schlüssel**![](images/create_api_keys.png)
+3. Fügen Sie neue Produkte hinzu und legen Sie deren Preise
+   fest![](images/Create_products.png) ![](images/add_product.png)
+4. Greifen Sie auf die Produkte zu, um die Preis-ID dieses Produkts zu erhalten.
    ![](images/go_to_product_get_priceId.png)
-  - Du kannst kopieren das priceId von hier ![](images/copy_priceId.png)
-5. Öffne das `Konfiguration/Variablen.yaml` In eurem Designer und setzen dem
-   secretKey und PublishableKey
-6. Speicher die #abgeändert Lagen und starten einen Demo Arbeitsgang
+  - Sie können die priceId von hier kopieren ![](images/copy_priceId.png)
+5. Öffnen Sie die Datei „ `Configuration/variables.yaml“` in Ihrem Designer und
+   legen Sie den geheimen Schlüssel (secretKey) und den veröffentlichbaren
+   Schlüssel (PublishableKey) fest.
+6. Speichern Sie die geänderten Einstellungen und starten Sie einen
+   Demo-Prozess.
 
 ```
 @variables.yaml@
