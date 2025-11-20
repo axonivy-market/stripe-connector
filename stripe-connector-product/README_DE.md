@@ -1,10 +1,10 @@
-# Stripe Konnektor
+# Stripe Connector
 
 **Stripe** ist eine umfassende **Zahlungsabwicklungsplattform**, die es
-Unternehmen ermöglicht, **Online- und persönliche Zahlungen** zu akzeptieren.
-Sie bietet eine leistungsstarke API zur Integration verschiedener
-Zahlungsmethoden, darunter **Kredit-/Debitkarten, digitale Geldbörsen,
-Banküberweisungen** und mehr.
+Unternehmen ermöglicht, **Online- und In-Person-Zahlungen** zu akzeptieren. Sie
+bietet eine leistungsstarke API zur Integration verschiedener Zahlungsmethoden,
+darunter **Kredit-/Debitkarten, digitale Geldbörsen, Banküberweisungen** und
+mehr.
 
 Wir bieten einen **-Konnektor**, der die Funktionen von Stripe nahtlos in einen
 **-Geschäftsprozess** integriert und so eine automatisierte und effiziente
@@ -19,7 +19,7 @@ Zahlungsabwicklung innerhalb von Axon Ivy ermöglicht.
 
 ### 2. Eingebettetes Stripe-Zahlungsformular
  * Das Stripe-Zahlungsformular kann direkt in die Axon Ivy-Benutzeroberfläche
-   **Axon Ivy UI** eingebettet werden.
+   **** eingebettet werden.
  * Dadurch können Zahlungen **innerhalb der Anwendung** verarbeitet werden, ohne
    dass eine Weiterleitung zu Stripe erforderlich ist.
 
@@ -40,7 +40,7 @@ verwendet werden.
 
 ## Demo
 
-### Anwendungsfall: Erstellen Sie einen paymentLink basierend auf Menge und priceId (befolgen Sie bitte die Installation Guide, um die priceId zu erhalten).
+### Anwendungsfall: Erstellen Sie einen paymentLink basierend auf Menge und priceId (befolgen Sie bitte die Installationsanleitung, um die priceId zu erhalten).
 ![](images/create_paymentLink.png)
 
 #### Über diesen Link können wir zur Zahlungswebsite von Stripe weitergeleitet werden und eine Zahlung vornehmen.
