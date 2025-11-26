@@ -57,7 +57,7 @@ verwendet werden.
   haben, wird das Formular automatisch zu einer Seite mit einer erfolgreichen
   Benachrichtigung weitergeleitet. ![](images/return_successful_page.png)
 
-## Einrichtung
+## Setup
 1. Erstellen Sie ein Konto bei **** : **[hier](https://stripe.com/en-de) **
 2. Gehen Sie zum Dashboard und suchen Sie „ **“ Entwickler** ->**API-Schlüssel**
    und erstellen Sie **einen geheimen Schlüssel und einen veröffentlichbaren
