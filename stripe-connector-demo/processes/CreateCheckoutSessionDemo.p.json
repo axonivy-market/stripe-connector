@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.1.2/process.json",
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
   "id" : "194EE3B279B2B3BD",
   "config" : {
     "data" : "com.axonivy.connector.stripe.CreateCheckoutSessionDemoData"
