@@ -1,5 +1,6 @@
 {
   "$schema" : "https://json-schema.axonivy.com/data-class/13.2.0/data-class.json",
   "simpleName" : "StripeEmbeddedCheckoutData",
-  "namespace" : "com.axonivy.connector.stripe.StripeEmbeddedCheckout"
+  "namespace" : "com.axonivy.connector.stripe.StripeEmbeddedCheckout",
+  "isBusinessCaseData" : false
 }
