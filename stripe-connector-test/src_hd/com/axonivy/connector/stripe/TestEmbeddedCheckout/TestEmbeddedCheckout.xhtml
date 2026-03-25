@@ -19,7 +19,7 @@
 						oncomplete="if (!args.validationFailed) {startCheckout();}" />
 				</div>
 				<h:panelGroup id="stripeContainer">
-					<ic:com.axonivy.connector.stripe.StripeEmbededCheckout
+					<ic:com.axonivy.connector.stripe.StripeEmbeddedCheckout
 						quantity="#{data.quantity}" priceId="#{data.priceId}" />
 				</h:panelGroup>
 			</h:form>

@@ -7,6 +7,6 @@ Dialogs:
             CreateCheckoutSessionDemo:
               createCheckoutSessionTitle: Create payment checkout session
               embedStripeCheckoutSession: Embed Stripe checkout Session form
-            PaymendLinkDemo:
+            PaymentLinkDemo:
               createPaymentLink: Create Payment Link
               paymentLinkTitle: Create Payment Link Demo
