@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "194D98A7BF7A2141",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -50,7 +50,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "clientId" : "Stripe-Stripe-API",
           "path" : "/v1/payment_links",
           "queryParams" : {
             "" : ""
@@ -191,7 +191,7 @@
       "name" : "Retrieve payment link",
       "config" : {
         "target" : {
-          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "clientId" : "Stripe-Stripe-API",
           "path" : "/v1/payment_links/{payment_link}",
           "templateParams" : {
             "payment_link" : "in.paymentLinkId"
@@ -301,7 +301,7 @@
       "name" : "Retrieve payment link's line items",
       "config" : {
         "target" : {
-          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "clientId" : "Stripe-Stripe-API",
           "path" : "/v1/payment_links/{payment_link}/line_items",
           "templateParams" : {
             "payment_link" : "in.paymentLinkId"
@@ -414,7 +414,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "clientId" : "Stripe-Stripe-API",
           "path" : "/v1/payment_links/{payment_link}",
           "templateParams" : {
             "payment_link" : "in.paymentLinkId"
@@ -500,7 +500,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "clientId" : "Stripe-Stripe-API",
           "path" : "/v1/payment_links",
           "queryParams" : {
             "" : ""

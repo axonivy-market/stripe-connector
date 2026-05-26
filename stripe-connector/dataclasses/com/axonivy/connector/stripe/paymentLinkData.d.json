@@ -1,28 +1,31 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "paymentLinkData",
   "namespace" : "com.axonivy.connector.stripe",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "priceId",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "quantity",
-    "type" : "Number"
+    "type" : "Number",
+    "modifiers" : [ ]
   }, {
     "name" : "result",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "paymentLinkId",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "active",
-    "type" : "Boolean"
+    "type" : "Boolean",
+    "modifiers" : [ ]
   }, {
     "name" : "paymentLink",
-    "type" : "com.stripe.api.client.PaymentLink"
+    "type" : "com.stripe.api.client.PaymentLink",
+    "modifiers" : [ ]
   }, {
     "name" : "paymentLinkLineItems",
-    "type" : "com.stripe.api.client.PaymentLinksResourceListLineItems"
+    "type" : "com.stripe.api.client.PaymentLinksResourceListLineItems",
+    "modifiers" : [ ]
   } ]
 }
