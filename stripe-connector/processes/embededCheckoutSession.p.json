@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "194EDBE6BFE7ECFD",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -50,7 +50,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "ef99b422-1c59-4c30-8e9c-4f528cb1e117",
+          "clientId" : "Stripe-Stripe-API",
           "path" : "/v1/checkout/sessions",
           "headers" : {
             "Authorization" : "\"bearer \" + ivy.var.stripe_auth_secretKey"

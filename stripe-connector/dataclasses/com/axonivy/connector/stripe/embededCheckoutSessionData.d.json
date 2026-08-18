@@ -1,23 +1,15 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "embededCheckoutSessionData",
   "namespace" : "com.axonivy.connector.stripe",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "priceId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "priceId"
   }, {
     "name" : "quantity",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
-    "name" : "result",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "result"
   }, {
-    "name" : "paymentMode",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "paymentMode"
   } ]
 }
