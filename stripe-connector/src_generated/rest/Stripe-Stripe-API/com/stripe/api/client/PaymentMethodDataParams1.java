@@ -39,7 +39,7 @@ import java.util.Map;
 /**
  * When included, this hash creates a PaymentMethod that is set as the [&#x60;payment_method&#x60;](https://stripe.com/docs/api/setup_intents/object#setup_intent_object-payment_method) value in the SetupIntent.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentMethodDataParams1 {
   @JsonProperty("acss_debit")

@@ -22,7 +22,7 @@ import com.stripe.api.client.OptionalFieldsAddress;
 /**
  * Shipping details for the invoice. The Invoice PDF will use the &#x60;shipping_details&#x60; value if it is set, otherwise the PDF will render the shipping address from the customer.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class RecipientShippingWithOptionalFieldsAddress {
   @JsonProperty("address")

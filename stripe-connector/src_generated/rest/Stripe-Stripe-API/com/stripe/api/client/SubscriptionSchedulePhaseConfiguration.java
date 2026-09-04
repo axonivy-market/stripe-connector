@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * A phase describes the plans, coupon, and trialing status of a subscription for a predefined time period.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SubscriptionSchedulePhaseConfiguration {
   @JsonProperty("add_invoice_items")

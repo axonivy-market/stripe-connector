@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * To share the contents of a &#x60;File&#x60; object with non-Stripe users, you can create a &#x60;FileLink&#x60;. &#x60;FileLink&#x60;s contain a URL that you can use to retrieve the contents of the file without authentication.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class FileLink {
   @JsonProperty("created")

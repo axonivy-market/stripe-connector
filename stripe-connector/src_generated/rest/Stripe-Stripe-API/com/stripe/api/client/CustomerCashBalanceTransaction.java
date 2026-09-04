@@ -27,7 +27,7 @@ import com.stripe.api.client.CustomerBalanceResourceCashBalanceTransactionResour
 /**
  * Customers with certain payments enabled have a cash balance, representing funds that were paid by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions represent when funds are moved into or out of this balance. This includes funding by the customer, allocation to payments, and refunds to the customer.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class CustomerCashBalanceTransaction implements AnyOfbalanceTransactionSource, AnyOfcustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftLinkedTransaction {
   @JsonProperty("adjusted_for_overdraft")

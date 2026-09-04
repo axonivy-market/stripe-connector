@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * A credit grant is an API resource that documents the allocation of some billing credits to a customer.  Related guide: [Billing credits](https://docs.stripe.com/billing/subscriptions/usage-based/billing-credits)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class BillingCreditGrant implements AnyOfbillingCreditBalanceTransactionCreditGrant {
   @JsonProperty("amount")

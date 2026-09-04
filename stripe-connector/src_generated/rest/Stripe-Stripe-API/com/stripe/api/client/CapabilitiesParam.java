@@ -22,7 +22,7 @@ import com.stripe.api.client.CapabilityParam;
 /**
  * Each key of the dictionary represents a capability, and each capability maps to its settings (for example, whether it has been requested or not). Each capability is inactive until you have provided its specific requirements and Stripe has verified them. An account might have some of its requested capabilities be active and some be inactive.  Required when [account.controller.stripe_dashboard.type](/api/accounts/create#create_account-controller-dashboard-type) is &#x60;none&#x60;, which includes Custom accounts.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class CapabilitiesParam {
   @JsonProperty("acss_debit_payments")

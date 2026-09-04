@@ -22,7 +22,7 @@ import com.stripe.api.client.SecretServiceResourceScope;
 /**
  * Secret Store is an API that allows Stripe Apps developers to securely persist secrets for use by UI Extensions and app backends.  The primary resource in Secret Store is a &#x60;secret&#x60;. Other apps can&#x27;t view secrets created by an app. Additionally, secrets are scoped to provide further permission control.  All Dashboard users and the app backend share &#x60;account&#x60; scoped secrets. Use the &#x60;account&#x60; scope for secrets that don&#x27;t change per-user, like a third-party API key.  A &#x60;user&#x60; scoped secret is accessible by the app backend and one specific Dashboard user. Use the &#x60;user&#x60; scope for per-user secrets like per-user OAuth tokens, where different users might have different permissions.  Related guide: [Store data between page reloads](https://stripe.com/docs/stripe-apps/store-auth-data-custom-objects)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class AppsSecret {
   @JsonProperty("created")

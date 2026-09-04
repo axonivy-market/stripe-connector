@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * Refund objects allow you to refund a previously created charge that isn&#x27;t refunded yet. Funds are refunded to the credit or debit card that&#x27;s initially charged.  Related guide: [Refunds](https://stripe.com/docs/refunds)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class Refund implements AnyOfbalanceTransactionSource, AnyOfcreditNoteRefund, AnyOfcustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund, AnyOfterminalReaderReaderResourceRefundPaymentActionRefund, AnyOftransferReversalDestinationPaymentRefund, AnyOftransferReversalSourceRefund {
   @JsonProperty("amount")

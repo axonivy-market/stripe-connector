@@ -25,7 +25,7 @@ import com.stripe.api.client.BillingMeterResourceCustomerMappingSettings;
 /**
  * Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.  Related guide: [Usage based billing](https://docs.stripe.com/billing/subscriptions/usage-based)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class BillingMeter implements AnyOfthresholdsResourceUsageThresholdConfigMeter {
   @JsonProperty("created")

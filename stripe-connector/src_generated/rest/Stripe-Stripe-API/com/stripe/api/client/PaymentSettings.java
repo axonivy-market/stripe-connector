@@ -22,7 +22,7 @@ import com.stripe.api.client.PaymentMethodOptions;
 /**
  * Payment settings to pass to invoices created by the subscription.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentSettings {
   @JsonProperty("payment_method_options")

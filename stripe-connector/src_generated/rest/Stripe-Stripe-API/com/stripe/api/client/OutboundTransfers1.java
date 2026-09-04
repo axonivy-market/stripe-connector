@@ -23,7 +23,7 @@ import com.stripe.api.client.AccessWithAchDetails;
 /**
  * Contains a Feature and settings related to moving money out of the FinancialAccount into another Account with the same owner.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class OutboundTransfers1 {
   @JsonProperty("ach")

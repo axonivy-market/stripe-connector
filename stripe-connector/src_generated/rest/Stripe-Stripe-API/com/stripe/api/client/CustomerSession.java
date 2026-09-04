@@ -22,7 +22,7 @@ import com.stripe.api.client.CustomerSessionResourceComponents;
 /**
  * A Customer Session allows you to grant Stripe&#x27;s frontend SDKs (like Stripe.js) client-side access control over a Customer.  Related guides: [Customer Session with the Payment Element](/payments/accept-a-payment-deferred?platform&#x3D;web&amp;type&#x3D;payment#save-payment-methods), [Customer Session with the Pricing Table](/payments/checkout/pricing-table#customer-session), [Customer Session with the Buy Button](/payment-links/buy-button#pass-an-existing-customer).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class CustomerSession {
   @JsonProperty("client_secret")
