@@ -25,7 +25,7 @@ import com.stripe.api.client.SourceMandateNotificationSepaDebitData;
 /**
  * Source mandate notifications should be created when a notification related to a source mandate must be sent to the payer. They will trigger a webhook or deliver an email to the customer.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SourceMandateNotification {
   @JsonProperty("acss_debit")

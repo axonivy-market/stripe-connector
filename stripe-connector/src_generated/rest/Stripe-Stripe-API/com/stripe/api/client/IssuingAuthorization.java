@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * When an [issued card](https://stripe.com/docs/issuing) is used to make a purchase, an Issuing &#x60;Authorization&#x60; object is created. [Authorizations](https://stripe.com/docs/issuing/purchases/authorizations) must be approved for the purchase to be completed successfully.  Related guide: [Issued card authorizations](https://stripe.com/docs/issuing/purchases/authorizations)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class IssuingAuthorization implements AnyOfbalanceTransactionSource, AnyOfissuingTransactionAuthorization {
   @JsonProperty("amount")

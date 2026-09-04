@@ -22,7 +22,7 @@ import com.stripe.api.client.DisplayPreferenceParam;
 /**
  * Apple Pay Later, a payment method for customers to buy now and pay later, gives your customers a way to split purchases into four installments across six weeks.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentMethodParam9 {
   @JsonProperty("display_preference")

@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Balance transactions represent funds moving through your Stripe account. Stripe creates them for every type of transaction that enters or leaves your Stripe account balance.  Related guide: [Balance transaction types](https://stripe.com/docs/reports/balance-transaction-types)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class BalanceTransaction implements AnyOfapplicationFeeBalanceTransaction, AnyOfchargeBalanceTransaction, AnyOfchargeFailureBalanceTransaction, AnyOfcustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction, AnyOfcustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalanceBalanceTransaction, AnyOffeeRefundBalanceTransaction, AnyOfissuingTransactionBalanceTransaction, AnyOfpayoutBalanceTransaction, AnyOfpayoutFailureBalanceTransaction, AnyOfrefundBalanceTransaction, AnyOfrefundFailureBalanceTransaction, AnyOftopupBalanceTransaction, AnyOftransferBalanceTransaction, AnyOftransferReversalBalanceTransaction {
   @JsonProperty("amount")

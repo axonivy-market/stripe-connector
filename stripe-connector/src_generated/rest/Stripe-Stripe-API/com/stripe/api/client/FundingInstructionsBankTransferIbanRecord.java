@@ -22,7 +22,7 @@ import com.stripe.api.client.Address;
 /**
  * Iban Records contain E.U. bank account details per the SEPA format.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class FundingInstructionsBankTransferIbanRecord {
   @JsonProperty("account_holder_address")

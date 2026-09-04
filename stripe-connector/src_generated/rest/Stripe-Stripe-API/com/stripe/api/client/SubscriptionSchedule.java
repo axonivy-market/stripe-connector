@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.  Related guide: [Subscription schedules](https://stripe.com/docs/billing/subscriptions/subscription-schedules)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SubscriptionSchedule implements AnyOfquoteSubscriptionSchedule, AnyOfsubscriptionSchedule {
   @JsonProperty("application")

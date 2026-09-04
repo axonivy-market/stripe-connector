@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Clone an existing quote. The new quote will be created in &#x60;status&#x3D;draft&#x60;. When using this parameter, you cannot specify any other parameters except for &#x60;expires_at&#x60;.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class FromQuoteParams {
   @JsonProperty("is_revision")

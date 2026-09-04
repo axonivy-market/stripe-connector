@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="primefaces"
+	xmlns:pe="primefaces.extensions">
+<h:body>
+	<ui:composition template="/layouts/basic-10.xhtml">
+		<ui:define name="title">TestEmbeddedCheckout</ui:define>
+		<ui:define name="content">
+			<h:form id="form">
+			<div class="command-btns">
+					<p:commandLink id="cancel" actionListener="#{logic.close}"
+						value="Cancel" immediate="true" />
+					<p:commandButton id="resquest-button" widgetVar="btn"
+						disabled="#{managedBean.disableForm}" process="@form"
+						update="form stripeContainer" value="Create" icon="pi pi-check"
+						oncomplete="if (!args.validationFailed) {startCheckout();}" />
+				</div>
+				<h:panelGroup id="stripeContainer">
+					<ic:com.axonivy.connector.stripe.StripeEmbeddedCheckout
+						quantity="#{data.quantity}" priceId="#{data.priceId}" />
+				</h:panelGroup>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

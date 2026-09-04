@@ -22,7 +22,7 @@ import com.stripe.api.client.TreasuryTransactionsResourceBalanceImpact;
 /**
  * TransactionEntries represent individual units of money movements within a single [Transaction](https://stripe.com/docs/api#transactions).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TreasuryTransactionEntry {
   @JsonProperty("balance_impact")

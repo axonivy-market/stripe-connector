@@ -23,7 +23,7 @@ import com.stripe.api.client.TaxProductResourceTaxSettingsStatusDetails;
 /**
  * You can use Tax &#x60;Settings&#x60; to manage configurations used by Stripe Tax calculations.  Related guide: [Using the Settings API](https://stripe.com/docs/tax/settings-api)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TaxSettings {
   @JsonProperty("defaults")

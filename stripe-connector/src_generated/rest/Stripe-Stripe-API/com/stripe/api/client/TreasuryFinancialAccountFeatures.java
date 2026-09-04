@@ -26,7 +26,7 @@ import com.stripe.api.client.TreasuryFinancialAccountsResourceToggleSettings;
 /**
  * Encodes whether a FinancialAccount has access to a particular Feature, with a &#x60;status&#x60; enum and associated &#x60;status_details&#x60;. Stripe or the platform can control Features via the requested field.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TreasuryFinancialAccountFeatures {
   @JsonProperty("card_issuing")

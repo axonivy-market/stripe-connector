@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * Hash used to generate the PaymentMethod to be used for this OutboundPayment. Exclusive with &#x60;destination_payment_method&#x60;.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentMethodData {
   @JsonProperty("billing_details")

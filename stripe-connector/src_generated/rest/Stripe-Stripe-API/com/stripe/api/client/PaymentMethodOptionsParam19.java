@@ -26,7 +26,7 @@ import com.stripe.api.client.SetupIntentPaymentMethodOptionsParam3;
 /**
  * Payment method-specific configuration for this SetupIntent.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentMethodOptionsParam19 {
   @JsonProperty("acss_debit")

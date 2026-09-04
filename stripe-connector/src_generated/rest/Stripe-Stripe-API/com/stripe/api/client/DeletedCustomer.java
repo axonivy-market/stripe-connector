@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * DeletedCustomer
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class DeletedCustomer implements AnyOfbankAccountCustomer, AnyOfbillingCreditBalanceSummaryCustomer, AnyOfbillingCreditGrantCustomer, AnyOfcardCustomer, AnyOfchargeCustomer, AnyOfcheckoutSessionCustomer, AnyOfcreditNoteCustomer, AnyOfdeletedDiscountCustomer, AnyOfdiscountCustomer, InlineResponse200, AnyOfinvoiceCustomer, AnyOfinvoiceitemCustomer, AnyOfpaymentIntentCustomer, AnyOfpromotionCodeCustomer, AnyOfquoteCustomer, AnyOfsetupAttemptCustomer, AnyOfsetupIntentCustomer, AnyOfsubscriptionCustomer, AnyOfsubscriptionScheduleCustomer {
   @JsonProperty("deleted")

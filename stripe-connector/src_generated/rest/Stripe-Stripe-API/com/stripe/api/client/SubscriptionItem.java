@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * Subscription items allow you to create customer subscriptions with more than one plan, making it easy to represent complex billing relationships.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SubscriptionItem implements AnyOflineItemSubscriptionItem {
   @JsonProperty("billing_thresholds")

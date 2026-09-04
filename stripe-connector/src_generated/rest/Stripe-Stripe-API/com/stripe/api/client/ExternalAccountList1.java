@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * External accounts (bank accounts and debit cards) currently attached to this account. External accounts are only returned for requests where &#x60;controller[is_controller]&#x60; is true.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class ExternalAccountList1 {
   @JsonProperty("data")

@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * As a [card issuer](https://stripe.com/docs/issuing), you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.  Related guide: [Issuing disputes](https://stripe.com/docs/issuing/purchases/disputes)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class IssuingDispute implements AnyOfbalanceTransactionSource, AnyOfissuingTransactionDispute {
   @JsonProperty("amount")

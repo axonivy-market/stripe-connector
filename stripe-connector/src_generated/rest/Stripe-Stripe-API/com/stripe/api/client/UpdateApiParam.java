@@ -22,7 +22,7 @@ import com.stripe.api.client.NetworksUpdateApiParam;
 /**
  * If this is a &#x60;card&#x60; PaymentMethod, this hash contains the user&#x27;s card details.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class UpdateApiParam {
   @JsonProperty("exp_month")

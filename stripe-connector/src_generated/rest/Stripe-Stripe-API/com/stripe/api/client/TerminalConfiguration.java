@@ -25,7 +25,7 @@ import com.stripe.api.client.TerminalConfigurationConfigurationResourceTipping;
 /**
  * A Configurations object represents how features should be configured for terminal readers.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TerminalConfiguration implements InlineResponse2003 {
   @JsonProperty("bbpos_wisepos_e")

@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Details about the customer you want to invoice or overrides for an existing customer. If &#x60;automatic_tax&#x60; is enabled then one of &#x60;customer&#x60;, &#x60;customer_details&#x60;, &#x60;subscription&#x60;, or &#x60;schedule&#x60; must be set.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class CustomerDetailsParam {
   @JsonProperty("address")

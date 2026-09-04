@@ -22,7 +22,7 @@ import com.stripe.api.client.Coupon;
 /**
  * A discount represents the actual application of a [coupon](https://stripe.com/docs/api#coupons) or [promotion code](https://stripe.com/docs/api#promotion_codes). It contains information about when the discount began, when it will end, and what it is applied to.  Related guide: [Applying discounts to subscriptions](https://stripe.com/docs/billing/subscriptions/discounts)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class Discount implements AnyOfcreditNotesPretaxCreditAmountDiscount, AnyOfcustomerDiscount, AnyOfdiscountsResourceDiscountAmountDiscount, AnyOfdiscountsResourceStackableDiscountDiscount, AnyOfinvoiceDiscount, AnyOfinvoiceDiscountsItems, AnyOfinvoiceitemDiscountsItems, AnyOfinvoicesResourcePretaxCreditAmountDiscount, AnyOflineItemDiscountsItems, AnyOfquoteDiscountsItems, AnyOfsubscriptionDiscount, AnyOfsubscriptionDiscountsItems, AnyOfsubscriptionItemDiscountsItems {
   @JsonProperty("checkout_session")

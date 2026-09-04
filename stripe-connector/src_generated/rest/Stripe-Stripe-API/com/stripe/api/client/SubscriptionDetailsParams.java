@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * The subscription creation or modification params to apply as a preview. Cannot be used with &#x60;schedule&#x60; or &#x60;schedule_details&#x60; fields.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SubscriptionDetailsParams {
   @JsonProperty("billing_cycle_anchor")
