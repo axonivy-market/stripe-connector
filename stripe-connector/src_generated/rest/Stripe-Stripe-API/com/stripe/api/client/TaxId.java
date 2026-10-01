@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * You can add one or multiple tax IDs to a [customer](https://stripe.com/docs/api/customers) or account. Customer and account tax IDs get displayed on related invoices and credit notes.  Related guides: [Customer tax identification numbers](https://stripe.com/docs/billing/taxes/tax-ids), [Account tax IDs](https://stripe.com/docs/invoicing/connect#account-tax-ids)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TaxId implements AnyOfaccountInvoicesSettingsDefaultAccountTaxIdsItems, AnyOfinvoiceAccountTaxIdsItems, AnyOfinvoiceSettingSubscriptionSchedulePhaseSettingAccountTaxIdsItems, AnyOfinvoiceSettingSubscriptionScheduleSettingAccountTaxIdsItems, AnyOfpaymentLinksResourceInvoiceSettingsAccountTaxIdsItems, AnyOfpaymentPagesCheckoutSessionInvoiceSettingsAccountTaxIdsItems, AnyOfsubscriptionsResourceSubscriptionInvoiceSettingsAccountTaxIdsItems {
   @JsonProperty("country")

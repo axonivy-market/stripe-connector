@@ -22,7 +22,7 @@ import com.stripe.api.client.SettingsTermsOfServiceSpecs;
 /**
  * Details on the legal guardian&#x27;s or authorizer&#x27;s acceptance of the required Stripe agreements.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PersonAdditionalTosAcceptancesSpecs {
   @JsonProperty("account")

@@ -26,7 +26,7 @@ import com.stripe.api.client.OutboundTransfers;
 /**
  * Encodes whether a FinancialAccount has access to a particular feature, with a status enum and associated &#x60;status_details&#x60;. Stripe or the platform may control features via the requested field.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class FeatureAccess1 {
   @JsonProperty("card_issuing")

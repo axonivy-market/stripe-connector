@@ -26,7 +26,7 @@ import com.stripe.api.client.PersonVerificationSpecs;
 /**
  * Information about the person represented by the account. This field is null unless &#x60;business_type&#x60; is set to &#x60;individual&#x60;. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is &#x60;application&#x60;, which includes Custom accounts.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class IndividualSpecs {
   @JsonProperty("address")

@@ -46,7 +46,7 @@ import java.util.Map;
 /**
  * &#x60;Source&#x60; objects allow you to accept a variety of payment methods. They represent a customer&#x27;s payment instrument, and can be used with the Stripe API just like a &#x60;Card&#x60; object: once chargeable, they can be charged, or can be attached to customers.  Stripe doesn&#x27;t recommend using the deprecated [Sources API](https://stripe.com/docs/api/sources). We recommend that you adopt the [PaymentMethods API](https://stripe.com/docs/api/payment_methods). This newer API provides access to our latest features and payment method types.  Related guides: [Sources API](https://stripe.com/docs/sources) and [Sources &amp; Customers](https://stripe.com/docs/sources/customers).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class Source implements AnyOfapiErrorsSource, AnyOfApmsSourcesSourceListDataItems, AnyOfApmsSourcesSourceList1DataItems, AnyOfcustomerDefaultSource, InlineResponse2001, AnyOfinvoiceDefaultSource, PaymentSource, AnyOfsubscriptionDefaultSource, AnyOftopupSource {
   @JsonProperty("ach_credit_transfer")

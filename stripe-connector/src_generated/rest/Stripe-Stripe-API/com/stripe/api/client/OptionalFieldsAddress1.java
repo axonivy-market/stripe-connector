@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * The full address of the location. You can&#x27;t change the location&#x27;s &#x60;country&#x60;. If you need to modify the &#x60;country&#x60; field, create a new &#x60;Location&#x60; object and re-register any existing readers to that location.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class OptionalFieldsAddress1 {
   @JsonProperty("city")

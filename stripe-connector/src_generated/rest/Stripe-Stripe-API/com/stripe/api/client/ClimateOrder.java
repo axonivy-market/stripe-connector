@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * Orders represent your intent to purchase a particular Climate product. When you create an order, the payment is deducted from your merchant balance.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class ClimateOrder {
   @JsonProperty("amount_fees")

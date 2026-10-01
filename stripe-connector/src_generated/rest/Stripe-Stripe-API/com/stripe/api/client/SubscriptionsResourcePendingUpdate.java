@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Pending Updates store the changes pending from a previous update that will be applied to the Subscription upon successful payment.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SubscriptionsResourcePendingUpdate implements AnyOfsubscriptionPendingUpdate {
   @JsonProperty("billing_cycle_anchor")

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Application
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class Application implements AnyOfapplicationFeeApplication, AnyOfbillingPortalConfigurationApplication, AnyOfchargeApplication, AnyOfinvoiceApplication, AnyOfpaymentIntentApplication, AnyOfpaymentLinkApplication, AnyOfquoteApplication, AnyOfsetupAttemptApplication, AnyOfsetupIntentApplication, AnyOfsubscriptionApplication, AnyOfsubscriptionScheduleApplication, AnyOftaxIDsOwnerApplication {
   @JsonProperty("id")

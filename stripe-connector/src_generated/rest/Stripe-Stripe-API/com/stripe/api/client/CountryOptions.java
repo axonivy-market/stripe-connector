@@ -26,7 +26,7 @@ import com.stripe.api.client.UnitedStates;
 /**
  * Specific options for a registration in the specified &#x60;country&#x60;.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class CountryOptions {
   @JsonProperty("ae")

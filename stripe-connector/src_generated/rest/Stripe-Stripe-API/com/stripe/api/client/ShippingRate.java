@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * Shipping rates describe the price of shipping presented to your customers and applied to a purchase. For more information, see [Charge for shipping](https://stripe.com/docs/payments/during-payment/charge-shipping).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class ShippingRate implements AnyOfinvoicesResourceShippingCostShippingRate, AnyOfpaymentLinksResourceShippingOptionShippingRate, AnyOfpaymentPagesCheckoutSessionShippingCostShippingRate, AnyOfpaymentPagesCheckoutSessionShippingOptionShippingRate {
   @JsonProperty("active")

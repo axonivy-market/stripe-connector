@@ -1,0 +1,15 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "embededCheckoutSessionData",
+  "namespace" : "com.axonivy.connector.stripe",
+  "fields" : [ {
+    "name" : "priceId"
+  }, {
+    "name" : "quantity",
+    "type" : "Number"
+  }, {
+    "name" : "result"
+  }, {
+    "name" : "paymentMode"
+  } ]
+}

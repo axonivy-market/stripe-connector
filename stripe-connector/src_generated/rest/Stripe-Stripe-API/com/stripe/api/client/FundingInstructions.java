@@ -22,7 +22,7 @@ import com.stripe.api.client.FundingInstructionsBankTransfer;
 /**
  * Each customer has a [&#x60;balance&#x60;](https://stripe.com/docs/api/customers/object#customer_object-balance) that is automatically applied to future invoices and payments using the &#x60;customer_balance&#x60; payment method. Customers can fund this balance by initiating a bank transfer to any account in the &#x60;financial_addresses&#x60; field. Related guide: [Customer balance funding instructions](https://stripe.com/docs/payments/customer-balance/funding-instructions)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class FundingInstructions {
   @JsonProperty("bank_transfer")

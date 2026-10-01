@@ -22,7 +22,7 @@ import com.stripe.api.client.BankConnectionsResourceOwnerList1;
 /**
  * Describes a snapshot of the owners of an account at a particular point in time.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class FinancialConnectionsAccountOwnership implements AnyOffinancialConnectionsAccountOwnership {
   @JsonProperty("created")

@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 /**
  * A billing meter event summary represents an aggregated view of a customer&#x27;s billing meter events within a specified timeframe. It indicates how much usage was accrued by a customer for that period.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class BillingMeterEventSummary {
   @JsonProperty("aggregated_value")

@@ -25,7 +25,7 @@ import com.stripe.api.client.MandateSingleUse;
 /**
  * A Mandate is a record of the permission that your customer gives you to debit their payment method.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class Mandate implements AnyOfinboundTransfersPaymentMethodDetailsUsBankAccountMandate, AnyOfoutboundPaymentsPaymentMethodDetailsUsBankAccountMandate, AnyOfoutboundTransfersPaymentMethodDetailsUsBankAccountMandate, AnyOfpaymentMethodDetailsBancontactGeneratedSepaDebitMandate, AnyOfpaymentMethodDetailsIdealGeneratedSepaDebitMandate, AnyOfpaymentMethodDetailsSofortGeneratedSepaDebitMandate, AnyOfpaymentMethodDetailsUsBankAccountMandate, AnyOfsetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebitMandate, AnyOfsetupAttemptPaymentMethodDetailsIdealGeneratedSepaDebitMandate, AnyOfsetupAttemptPaymentMethodDetailsSofortGeneratedSepaDebitMandate, AnyOfsetupIntentMandate, AnyOfsetupIntentSingleUseMandate {
   @JsonProperty("customer_acceptance")

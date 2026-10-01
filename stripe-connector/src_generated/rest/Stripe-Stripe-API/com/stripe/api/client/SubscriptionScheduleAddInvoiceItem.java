@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * An Add Invoice Item describes the prices and quantities that will be added as pending invoice items when entering a phase.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SubscriptionScheduleAddInvoiceItem {
   @JsonProperty("discounts")

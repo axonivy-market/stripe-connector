@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * Any use of an [issued card](https://stripe.com/docs/issuing) that results in funds entering or leaving your Stripe account, such as a completed purchase or refund, is represented by an Issuing &#x60;Transaction&#x60; object.  Related guide: [Issued card transactions](https://stripe.com/docs/issuing/purchases/transactions)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class IssuingTransaction implements AnyOfbalanceTransactionSource, AnyOfissuingDisputeTransaction {
   @JsonProperty("amount")

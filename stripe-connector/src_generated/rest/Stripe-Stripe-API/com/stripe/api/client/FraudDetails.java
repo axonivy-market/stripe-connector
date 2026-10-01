@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * A set of key-value pairs you can attach to a charge giving information about its riskiness. If you believe a charge is fraudulent, include a &#x60;user_report&#x60; key with a value of &#x60;fraudulent&#x60;. If you believe a charge is safe, include a &#x60;user_report&#x60; key with a value of &#x60;safe&#x60;. Stripe will use the information you send to improve our fraud detection algorithms.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class FraudDetails {
   /**

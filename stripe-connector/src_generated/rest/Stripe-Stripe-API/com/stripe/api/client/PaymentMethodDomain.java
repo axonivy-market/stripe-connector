@@ -22,7 +22,7 @@ import com.stripe.api.client.PaymentMethodDomainResourcePaymentMethodStatus;
 /**
  * A payment method domain represents a web domain that you have registered with Stripe. Stripe Elements use registered payment method domains to control where certain payment methods are shown.  Related guide: [Payment method domains](https://stripe.com/docs/payments/payment-methods/pmd-registration).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentMethodDomain {
   @JsonProperty("amazon_pay")

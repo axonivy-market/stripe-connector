@@ -22,7 +22,7 @@ import com.stripe.api.client.ProductData;
 /**
  * Data used to generate a new [Price](https://stripe.com/docs/api/prices) object inline. One of &#x60;price&#x60; or &#x60;price_data&#x60; is required.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class OneTimePriceDataWithProductData1 {
   @JsonProperty("currency")

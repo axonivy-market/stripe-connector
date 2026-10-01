@@ -1,12 +1,13 @@
 package com.axonivy.connector.stripe.managedBean;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import java.io.Serializable;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 
 
-@ManagedBean
+@Named
 @ViewScoped
-public class CreateCheckoutSessionBean {
+public class CreateCheckoutSessionBean implements Serializable {
   private String priceId;
   private long quantity;
   private boolean disableForm;
