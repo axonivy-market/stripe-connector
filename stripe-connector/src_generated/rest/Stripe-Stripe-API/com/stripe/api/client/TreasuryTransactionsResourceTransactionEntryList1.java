@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * A list of TransactionEntries that are part of this Transaction. This cannot be expanded in any list endpoints.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TreasuryTransactionsResourceTransactionEntryList1 {
   @JsonProperty("data")

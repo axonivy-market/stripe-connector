@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * The amount of the tax rate when the &#x60;rate_type&#x60;&#x60; is &#x60;flat_amount&#x60;. Tax rates with &#x60;rate_type&#x60; &#x60;percentage&#x60; can vary based on the transaction, resulting in this field being &#x60;null&#x60;. This field exposes the amount and currency of the flat tax rate.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TaxRateFlatAmount implements AnyOftaxProductResourceTaxRateDetailsFlatAmount, AnyOftaxRateFlatAmount {
   @JsonProperty("amount")

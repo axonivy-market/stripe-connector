@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/rest-clients-1.json
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0/config/rest-clients.json
 RestClients:
   #The Stripe REST API. Please see https://stripe.com/docs/api for more details.
   Stripe-Stripe-API:

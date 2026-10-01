@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * Each customer has a [Balance](https://stripe.com/docs/api/customers/object#customer_object-balance) value, which denotes a debit or credit that&#x27;s automatically applied to their next invoice upon finalization. You may modify the value directly by using the [update customer API](https://stripe.com/docs/api/customers/update), or by creating a Customer Balance Transaction, which increments or decrements the customer&#x27;s &#x60;balance&#x60; by the specified &#x60;amount&#x60;.  Related guide: [Customer balance](https://stripe.com/docs/billing/customer/balance)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class CustomerBalanceTransaction implements AnyOfcreditNoteCustomerBalanceTransaction {
   @JsonProperty("amount")

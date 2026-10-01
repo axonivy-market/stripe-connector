@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * The schedule creation or modification params to apply as a preview. Cannot be used with &#x60;subscription&#x60; or &#x60;subscription_&#x60; prefixed fields.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class ScheduleDetailsParams {
   /**

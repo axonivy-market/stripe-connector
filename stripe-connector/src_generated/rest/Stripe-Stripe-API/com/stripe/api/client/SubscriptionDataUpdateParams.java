@@ -22,7 +22,7 @@ import com.stripe.api.client.SubscriptionDataInvoiceSettingsParams;
 /**
  * When creating a subscription, the specified configuration data will be used. There must be at least one line item with a recurring price to use &#x60;subscription_data&#x60;.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class SubscriptionDataUpdateParams {
   @JsonProperty("invoice_settings")

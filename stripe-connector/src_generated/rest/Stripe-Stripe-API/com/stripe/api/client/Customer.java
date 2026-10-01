@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * This object represents a customer of your business. Use it to [create recurring charges](https://stripe.com/docs/invoicing/customer), [save payment](https://stripe.com/docs/payments/save-during-payment) and contact information, and track payments that belong to the same customer.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class Customer implements AnyOfbankAccountCustomer, AnyOfbankConnectionsResourceAccountholderCustomer, AnyOfbillingCreditBalanceSummaryCustomer, AnyOfbillingCreditGrantCustomer, AnyOfcardCustomer, AnyOfchargeCustomer, AnyOfcheckoutSessionCustomer, AnyOfconfirmationTokensResourcePaymentMethodPreviewCustomer, AnyOfcreditNoteCustomer, AnyOfcustomerBalanceTransactionCustomer, AnyOfcustomerCashBalanceTransactionCustomer, AnyOfcustomerSessionCustomer, AnyOfdeletedDiscountCustomer, AnyOfdiscountCustomer, InlineResponse200, AnyOfinvoiceCustomer, AnyOfinvoiceitemCustomer, AnyOfpaymentIntentCustomer, AnyOfpaymentMethodCustomer, AnyOfpromotionCodeCustomer, AnyOfquoteCustomer, AnyOfsetupAttemptCustomer, AnyOfsetupIntentCustomer, AnyOfsubscriptionCustomer, AnyOfsubscriptionScheduleCustomer, AnyOftaxIDsOwnerCustomer, AnyOftaxIdCustomer, AnyOfthresholdsResourceUsageAlertFilterCustomer {
   @JsonProperty("address")

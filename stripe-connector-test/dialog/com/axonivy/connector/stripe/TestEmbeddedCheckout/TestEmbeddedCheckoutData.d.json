@@ -1,0 +1,13 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "TestEmbeddedCheckoutData",
+  "namespace" : "com.axonivy.connector.stripe.TestEmbeddedCheckout",
+  "fields" : [ {
+    "name" : "priceId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "quantity",
+    "type" : "Number",
+    "modifiers" : [ ]
+  } ]
+}

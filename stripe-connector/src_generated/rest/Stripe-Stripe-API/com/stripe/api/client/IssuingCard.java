@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * You can [create physical or virtual cards](https://stripe.com/docs/issuing) that are issued to cardholders.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class IssuingCard implements AnyOfissuingCardReplacedBy, AnyOfissuingCardReplacementFor, AnyOfissuingTokenCard, AnyOfissuingTransactionCard {
   @JsonProperty("brand")

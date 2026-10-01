@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Detailed breakdown of amount components. These amounts are denominated in &#x60;currency&#x60; and in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class AmountDetailsSpecs {
   @JsonProperty("atm_fee")

@@ -22,7 +22,7 @@ import com.stripe.api.client.PaymentMethodOptions1;
 /**
  * Configuration settings for the PaymentIntent that is generated when the invoice is finalized.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentSettings1 {
   @JsonProperty("default_mandate")

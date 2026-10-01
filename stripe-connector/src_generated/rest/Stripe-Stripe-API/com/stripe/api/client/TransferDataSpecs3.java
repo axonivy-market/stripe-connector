@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 /**
  * If specified, the funds from the subscription&#x27;s invoices will be transferred to the destination and the ID of the resulting transfers will be found on the resulting charges.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TransferDataSpecs3 {
   @JsonProperty("amount_percent")

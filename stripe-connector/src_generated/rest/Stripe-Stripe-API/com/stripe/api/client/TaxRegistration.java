@@ -22,7 +22,7 @@ import com.stripe.api.client.TaxProductRegistrationsResourceCountryOptions;
 /**
  * A Tax &#x60;Registration&#x60; lets us know that your business is registered to collect tax on payments within a region, enabling you to [automatically collect tax](https://stripe.com/docs/tax).  Stripe doesn&#x27;t register on your behalf with the relevant authorities when you create a Tax &#x60;Registration&#x60; object. For more information on how to register to collect tax, see [our guide](https://stripe.com/docs/tax/registering).  Related guide: [Using the Registrations API](https://stripe.com/docs/tax/registrations-api)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TaxRegistration {
   @JsonProperty("active_from")

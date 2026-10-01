@@ -1,16 +1,17 @@
 package com.axonivy.connector.stripe.managedBean;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import java.io.Serializable;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 
 import com.axonivy.connector.stripe.service.PaymentService;
 import com.stripe.api.client.PaymentLink;
 import com.stripe.api.client.PaymentLinksResourceListLineItems;
 import com.stripe.exception.StripeException;
 
-@ManagedBean
+@Named
 @ViewScoped
-public class PaymentLinkBean {
+public class PaymentLinkBean implements Serializable {
   private String priceId;
   private long quantity;
   private String result;

@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class IssuingPersonalizationDesign implements AnyOfissuingCardPersonalizationDesign {
   @JsonProperty("card_logo")

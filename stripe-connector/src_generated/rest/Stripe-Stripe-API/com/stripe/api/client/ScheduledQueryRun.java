@@ -22,7 +22,7 @@ import com.stripe.api.client.SigmaScheduledQueryRunError;
 /**
  * If you have [scheduled a Sigma query](https://stripe.com/docs/sigma/scheduled-queries), you&#x27;ll receive a &#x60;sigma.scheduled_query_run.created&#x60; webhook each time the query runs. The webhook contains a &#x60;ScheduledQueryRun&#x60; object, which you can use to retrieve the query results.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class ScheduledQueryRun {
   @JsonProperty("created")

@@ -27,7 +27,7 @@ import com.stripe.api.client.GelatoVerificationReportOptions;
 /**
  * A VerificationReport is the result of an attempt to collect and verify data from a user. The collection of verification checks performed is determined from the &#x60;type&#x60; and &#x60;options&#x60; parameters used. You can find the result of each verification check performed in the appropriate sub-resource: &#x60;document&#x60;, &#x60;id_number&#x60;, &#x60;selfie&#x60;.  Each VerificationReport contains a copy of any data collected by the user as well as reference IDs which can be used to access collected images through the [FileUpload](https://stripe.com/docs/api/files) API. To configure and create VerificationReports, use the [VerificationSession](https://stripe.com/docs/api/identity/verification_sessions) API.  Related guide: [Accessing verification results](https://stripe.com/docs/identity/verification-sessions#results).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class IdentityVerificationReport implements AnyOfidentityVerificationSessionLastVerificationReport {
   @JsonProperty("client_reference_id")

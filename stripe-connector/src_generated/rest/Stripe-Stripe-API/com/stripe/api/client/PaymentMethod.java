@@ -72,7 +72,7 @@ import java.util.Map;
 /**
  * PaymentMethod objects represent your customer&#x27;s payment instruments. You can use them with [PaymentIntents](https://stripe.com/docs/payments/payment-intents) to collect payments or save them to Customer objects to store instrument details for future payments.  Related guides: [Payment Methods](https://stripe.com/docs/payments/payment-methods) and [More Payment Scenarios](https://stripe.com/docs/payments/more-payment-scenarios).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class PaymentMethod implements AnyOfinvoiceDefaultPaymentMethod, AnyOfinvoiceSettingCustomerSettingDefaultPaymentMethod, AnyOfmandatePaymentMethod, AnyOfpaymentIntentPaymentMethod, AnyOfpaymentMethodDetailsBancontactGeneratedSepaDebit, AnyOfpaymentMethodDetailsIdealGeneratedSepaDebit, AnyOfpaymentMethodDetailsSofortGeneratedSepaDebit, AnyOfsetupAttemptPaymentMethod, AnyOfsetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebit, AnyOfsetupAttemptPaymentMethodDetailsCardPresentGeneratedCard, AnyOfsetupAttemptPaymentMethodDetailsIdealGeneratedSepaDebit, AnyOfsetupAttemptPaymentMethodDetailsSofortGeneratedSepaDebit, AnyOfsetupIntentPaymentMethod, AnyOfsubscriptionDefaultPaymentMethod, AnyOfsubscriptionSchedulePhaseConfigurationDefaultPaymentMethod, AnyOfsubscriptionSchedulesResourceDefaultSettingsDefaultPaymentMethod {
   @JsonProperty("acss_debit")

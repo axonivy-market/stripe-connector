@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * A Tax Calculation allows you to calculate the tax to collect from your customer.  Related guide: [Calculate tax in your custom payment flow](https://stripe.com/docs/tax/custom)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TaxCalculation {
   @JsonProperty("amount_total")

@@ -22,7 +22,7 @@ import com.stripe.api.client.ConnectEmbeddedAccountSessionCreateComponents;
 /**
  * An AccountSession allows a Connect platform to grant access to a connected account in Connect embedded components.  We recommend that you create an AccountSession each time you need to display an embedded component to your user. Do not save AccountSessions to your database as they expire relatively quickly, and cannot be used more than once.  Related guide: [Connect embedded components](https://stripe.com/docs/connect/get-started-connect-embedded-components)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class AccountSession {
   @JsonProperty("account")

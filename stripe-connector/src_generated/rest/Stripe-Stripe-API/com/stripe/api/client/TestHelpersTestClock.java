@@ -22,7 +22,7 @@ import com.stripe.api.client.BillingClocksResourceStatusDetailsStatusDetails;
 /**
  * A test clock enables deterministic control over objects in testmode. With a test clock, you can create objects at a frozen time in the past or future, and advance to a specific future time to observe webhooks and state changes. After the clock advances, you can either validate the current state of your scenario (and test your assumptions), change the current state of your scenario (and test more complex scenarios), or keep advancing forward in time.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TestHelpersTestClock implements AnyOfbillingCreditBalanceTransactionTestClock, AnyOfbillingCreditGrantTestClock, AnyOfcustomerTestClock, AnyOfinvoiceTestClock, AnyOfinvoiceitemTestClock, AnyOfquoteTestClock, AnyOfsubscriptionTestClock, AnyOfsubscriptionScheduleTestClock {
   @JsonProperty("created")

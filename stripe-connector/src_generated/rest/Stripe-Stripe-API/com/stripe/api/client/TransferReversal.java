@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * [Stripe Connect](https://stripe.com/docs/connect) platforms can reverse transfers made to a connected account, either entirely or partially, and can also specify whether to refund any related application fees. Transfer reversals add to the platform&#x27;s balance and subtract from the destination account&#x27;s balance.  Reversing a transfer that was made for a [destination charge](/docs/connect/destination-charges) is allowed only up to the amount of the charge. It is possible to reverse a [transfer_group](https://stripe.com/docs/connect/separate-charges-and-transfers#transfer-options) transfer only if the destination account has enough balance to cover the reversal.  Related guide: [Reverse transfers](https://stripe.com/docs/connect/separate-charges-and-transfers#reverse-transfers)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-23T08:38:25.571625600+07:00[Asia/Bangkok]")
 
 public class TransferReversal implements AnyOfbalanceTransactionSource, AnyOfrefundSourceTransferReversal, AnyOfrefundTransferReversal {
   @JsonProperty("amount")
